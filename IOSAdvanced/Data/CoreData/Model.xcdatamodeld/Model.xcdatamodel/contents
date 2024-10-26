@@ -7,7 +7,7 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="photo" optional="YES" attributeType="String"/>
         <relationship name="locations" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDLocation" inverseName="hero" inverseEntity="CDLocation"/>
-        <relationship name="transformations" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDTransformation"/>
+        <relationship name="transformations" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDTransformation" inverseName="hero" inverseEntity="CDTransformation"/>
     </entity>
     <entity name="CDLocation" representedClassName="MOLocation" syncable="YES">
         <attribute name="date" optional="YES" attributeType="String"/>
@@ -21,6 +21,6 @@
         <attribute name="info" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="photo" optional="YES" attributeType="String"/>
-        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDHero"/>
+        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CDHero" inverseName="transformations" inverseEntity="CDHero"/>
     </entity>
 </model>

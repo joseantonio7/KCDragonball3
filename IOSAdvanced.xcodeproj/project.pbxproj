@@ -60,6 +60,12 @@
 		61245CC82CCD52B000B368AA /* SWPatternsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CC32CCD52B000B368AA /* SWPatternsTests.swift */; };
 		61245CCC2CCD52B300B368AA /* SWPatternsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CC92CCD52B300B368AA /* SWPatternsUITests.swift */; };
 		61245CCD2CCD52B300B368AA /* SWPatternsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CCA2CCD52B300B368AA /* SWPatternsUITestsLaunchTests.swift */; };
+		61245CD42CCD659D00B368AA /* MOHero+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CCE2CCD659D00B368AA /* MOHero+CoreDataClass.swift */; };
+		61245CD52CCD659D00B368AA /* MOHero+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CCF2CCD659D00B368AA /* MOHero+CoreDataProperties.swift */; };
+		61245CD62CCD659D00B368AA /* MOLocation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CD02CCD659D00B368AA /* MOLocation+CoreDataClass.swift */; };
+		61245CD72CCD659D00B368AA /* MOLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CD12CCD659D00B368AA /* MOLocation+CoreDataProperties.swift */; };
+		61245CD82CCD659D00B368AA /* MOTransformation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CD22CCD659D00B368AA /* MOTransformation+CoreDataClass.swift */; };
+		61245CD92CCD659D00B368AA /* MOTransformation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CD32CCD659D00B368AA /* MOTransformation+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +140,12 @@
 		61245CC32CCD52B000B368AA /* SWPatternsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWPatternsTests.swift; sourceTree = "<group>"; };
 		61245CC92CCD52B300B368AA /* SWPatternsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWPatternsUITests.swift; sourceTree = "<group>"; };
 		61245CCA2CCD52B300B368AA /* SWPatternsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWPatternsUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		61245CCE2CCD659D00B368AA /* MOHero+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MOHero+CoreDataClass.swift"; sourceTree = "<group>"; };
+		61245CCF2CCD659D00B368AA /* MOHero+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MOHero+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		61245CD02CCD659D00B368AA /* MOLocation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MOLocation+CoreDataClass.swift"; sourceTree = "<group>"; };
+		61245CD12CCD659D00B368AA /* MOLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MOLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		61245CD22CCD659D00B368AA /* MOTransformation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MOTransformation+CoreDataClass.swift"; sourceTree = "<group>"; };
+		61245CD32CCD659D00B368AA /* MOTransformation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MOTransformation+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		F84020152CAB22410051B4F7 /* IOSAdvanced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSAdvanced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F840202B2CAB22430051B4F7 /* IOSAdvancedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSAdvancedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F84020352CAB22430051B4F7 /* IOSAdvancedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSAdvancedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -196,6 +208,7 @@
 		61245C022CCD2DBD00B368AA /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				61245CDA2CCD65C000B368AA /* CoreData */,
 				61245BF82CCD2DBD00B368AA /* DataSources */,
 				61245BFD2CCD2DBD00B368AA /* Networking */,
 				61245C012CCD2DBD00B368AA /* Requests */,
@@ -366,7 +379,6 @@
 				61245C0C2CCD2DBD00B368AA /* Domain */,
 				61245C312CCD2DBD00B368AA /* Presentation */,
 				61245C382CCD2DBD00B368AA /* Supporting Files */,
-				61245C682CCD2E7100B368AA /* Model.xcdatamodeld */,
 			);
 			path = IOSAdvanced;
 			sourceTree = "<group>";
@@ -405,6 +417,20 @@
 				61245CCA2CCD52B300B368AA /* SWPatternsUITestsLaunchTests.swift */,
 			);
 			path = IOSAdvancedUITests;
+			sourceTree = "<group>";
+		};
+		61245CDA2CCD65C000B368AA /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				61245C682CCD2E7100B368AA /* Model.xcdatamodeld */,
+				61245CCE2CCD659D00B368AA /* MOHero+CoreDataClass.swift */,
+				61245CCF2CCD659D00B368AA /* MOHero+CoreDataProperties.swift */,
+				61245CD02CCD659D00B368AA /* MOLocation+CoreDataClass.swift */,
+				61245CD12CCD659D00B368AA /* MOLocation+CoreDataProperties.swift */,
+				61245CD22CCD659D00B368AA /* MOTransformation+CoreDataClass.swift */,
+				61245CD32CCD659D00B368AA /* MOTransformation+CoreDataProperties.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		F840200C2CAB22410051B4F7 = {
@@ -583,6 +609,12 @@
 				61245C4C2CCD2DBD00B368AA /* Credentials.swift in Sources */,
 				61245C4D2CCD2DBD00B368AA /* Hero.swift in Sources */,
 				61245C4E2CCD2DBD00B368AA /* Transformation.swift in Sources */,
+				61245CD42CCD659D00B368AA /* MOHero+CoreDataClass.swift in Sources */,
+				61245CD52CCD659D00B368AA /* MOHero+CoreDataProperties.swift in Sources */,
+				61245CD62CCD659D00B368AA /* MOLocation+CoreDataClass.swift in Sources */,
+				61245CD72CCD659D00B368AA /* MOLocation+CoreDataProperties.swift in Sources */,
+				61245CD82CCD659D00B368AA /* MOTransformation+CoreDataClass.swift in Sources */,
+				61245CD92CCD659D00B368AA /* MOTransformation+CoreDataProperties.swift in Sources */,
 				61245C4F2CCD2DBD00B368AA /* GetAllHeroesUseCase.swift in Sources */,
 				61245C502CCD2DBD00B368AA /* GetHeroUseCase.swift in Sources */,
 				61245C512CCD2DBD00B368AA /* GetTransformationsUseCase.swift in Sources */,
