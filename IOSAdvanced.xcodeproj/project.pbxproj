@@ -66,6 +66,9 @@
 		61245CE42CCD684D00B368AA /* MOLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CDE2CCD684D00B368AA /* MOLocation+CoreDataProperties.swift */; };
 		61245CE52CCD684D00B368AA /* MOTransformation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CDF2CCD684D00B368AA /* MOTransformation+CoreDataClass.swift */; };
 		61245CE62CCD684D00B368AA /* MOTransformation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CE02CCD684D00B368AA /* MOTransformation+CoreDataProperties.swift */; };
+		61245CE92CCD6BAF00B368AA /* ApiHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CE82CCD6BA700B368AA /* ApiHero.swift */; };
+		61245CEB2CCD6C0400B368AA /* ApiTransformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CEA2CCD6BFC00B368AA /* ApiTransformation.swift */; };
+		61245CED2CCD6C6D00B368AA /* ApiLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CEC2CCD6C6D00B368AA /* ApiLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +149,9 @@
 		61245CDE2CCD684D00B368AA /* MOLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MOLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		61245CDF2CCD684D00B368AA /* MOTransformation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MOTransformation+CoreDataClass.swift"; sourceTree = "<group>"; };
 		61245CE02CCD684D00B368AA /* MOTransformation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MOTransformation+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		61245CE82CCD6BA700B368AA /* ApiHero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHero.swift; sourceTree = "<group>"; };
+		61245CEA2CCD6BFC00B368AA /* ApiTransformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTransformation.swift; sourceTree = "<group>"; };
+		61245CEC2CCD6C6D00B368AA /* ApiLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLocation.swift; sourceTree = "<group>"; };
 		F84020152CAB22410051B4F7 /* IOSAdvanced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSAdvanced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F840202B2CAB22430051B4F7 /* IOSAdvancedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSAdvancedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F84020352CAB22430051B4F7 /* IOSAdvancedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSAdvancedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -208,6 +214,7 @@
 		61245C022CCD2DBD00B368AA /* Data */ = {
 			isa = PBXGroup;
 			children = (
+				61245CE72CCD6B9500B368AA /* APIModel */,
 				61245CDA2CCD65C000B368AA /* CoreData */,
 				61245BF82CCD2DBD00B368AA /* DataSources */,
 				61245BFD2CCD2DBD00B368AA /* Networking */,
@@ -433,6 +440,16 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		61245CE72CCD6B9500B368AA /* APIModel */ = {
+			isa = PBXGroup;
+			children = (
+				61245CEC2CCD6C6D00B368AA /* ApiLocation.swift */,
+				61245CEA2CCD6BFC00B368AA /* ApiTransformation.swift */,
+				61245CE82CCD6BA700B368AA /* ApiHero.swift */,
+			);
+			path = APIModel;
+			sourceTree = "<group>";
+		};
 		F840200C2CAB22410051B4F7 = {
 			isa = PBXGroup;
 			children = (
@@ -616,12 +633,15 @@
 				61245CE52CCD684D00B368AA /* MOTransformation+CoreDataClass.swift in Sources */,
 				61245CE62CCD684D00B368AA /* MOTransformation+CoreDataProperties.swift in Sources */,
 				61245C4F2CCD2DBD00B368AA /* GetAllHeroesUseCase.swift in Sources */,
+				61245CED2CCD6C6D00B368AA /* ApiLocation.swift in Sources */,
+				61245CEB2CCD6C0400B368AA /* ApiTransformation.swift in Sources */,
 				61245C502CCD2DBD00B368AA /* GetHeroUseCase.swift in Sources */,
 				61245C512CCD2DBD00B368AA /* GetTransformationsUseCase.swift in Sources */,
 				61245C522CCD2DBD00B368AA /* LoginUseCase.swift in Sources */,
 				61245C532CCD2DBD00B368AA /* AsyncImageView.swift in Sources */,
 				61245C542CCD2DBD00B368AA /* HeroDetailBuilder.swift in Sources */,
 				61245C552CCD2DBD00B368AA /* HeroDetailViewController.swift in Sources */,
+				61245CE92CCD6BAF00B368AA /* ApiHero.swift in Sources */,
 				61245C562CCD2DBD00B368AA /* HeroDetailViewModel.swift in Sources */,
 				61245C6A2CCD2E7100B368AA /* Model.xcdatamodeld in Sources */,
 				61245C572CCD2DBD00B368AA /* HeroTableViewCell.swift in Sources */,

@@ -1,7 +1,7 @@
 import Foundation
 
 struct GetHeroesAPIRequest: APIRequest {
-    typealias Response = [Hero]
+    typealias Response = [ApiHero]
     
     let path: String = "/api/heros/all"
     let method: HTTPMethod = .POST
