@@ -124,7 +124,7 @@ final class HeroesViewModelTests: XCTestCase {
 extension ApiHero {
     
     func mapToHero() -> Hero {
-        Hero.init(id: self.id ?? "",
+        Hero.init(id: self.identifier ?? "",
                   name: self.name ?? "",
                   info: self.description ?? "",
                   photo: self.photo ?? "",

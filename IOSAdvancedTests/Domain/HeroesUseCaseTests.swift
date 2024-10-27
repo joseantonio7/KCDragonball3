@@ -17,7 +17,7 @@ final class HeroesUseCaseTests: XCTestCase {
     override func setUpWithError() throws {
         try super.setUpWithError()
         storeDataProvider = StoreDataProvider(persistency: .inMemory)
-        sut = HeroUseCase(apiProvider: ApiProviderMock(), storeDataPRovider: storeDataProvider)
+        sut = HeroUseCase(apiProvider: GetHeroesAPIRequestMock(), storeDataPRovider: storeDataProvider)
     }
 
     override func tearDownWithError() throws {
@@ -54,7 +54,7 @@ final class HeroesUseCaseTests: XCTestCase {
     func test_LoadHeroes_Error_ShouldREturnError() {
         //Given
         sut = HeroUseCase(apiProvider: ApiProviderErrorMock(), storeDataPRovider: storeDataProvider)
-        var error: GAError?
+        var error: APIErrorResponse?
         
         //When
         let expectation = expectation(description: "Load heroes return error")

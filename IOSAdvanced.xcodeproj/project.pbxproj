@@ -81,6 +81,7 @@
 		61245E202CCE71E000B368AA /* ApiProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245E1F2CCE71E000B368AA /* ApiProviderTests.swift */; };
 		61245E242CCE728C00B368AA /* HeroesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245E232CCE728C00B368AA /* HeroesUseCaseTests.swift */; };
 		61245E272CCE72C000B368AA /* HeroesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245E262CCE72C000B368AA /* HeroesViewModelTests.swift */; };
+		61245E292CCE788200B368AA /* GetHeroesAPIRequestMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245E282CCE787C00B368AA /* GetHeroesAPIRequestMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -175,6 +176,7 @@
 		61245E1F2CCE71E000B368AA /* ApiProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProviderTests.swift; sourceTree = "<group>"; };
 		61245E232CCE728C00B368AA /* HeroesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesUseCaseTests.swift; sourceTree = "<group>"; };
 		61245E262CCE72C000B368AA /* HeroesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewModelTests.swift; sourceTree = "<group>"; };
+		61245E282CCE787C00B368AA /* GetHeroesAPIRequestMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHeroesAPIRequestMock.swift; sourceTree = "<group>"; };
 		F84020152CAB22410051B4F7 /* IOSAdvanced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSAdvanced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F84020352CAB22430051B4F7 /* IOSAdvancedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSAdvancedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -466,6 +468,7 @@
 		61245E132CCE703A00B368AA /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				61245E282CCE787C00B368AA /* GetHeroesAPIRequestMock.swift */,
 				61245E1A2CCE715A00B368AA /* Heroes.json */,
 				61245E112CCE6FD800B368AA /* MockData.swift */,
 				61245E142CCE707C00B368AA /* ApiProviderMock.swift */,
@@ -676,6 +679,7 @@
 				61245E122CCE6FD800B368AA /* MockData.swift in Sources */,
 				61245E272CCE72C000B368AA /* HeroesViewModelTests.swift in Sources */,
 				61245E152CCE707C00B368AA /* ApiProviderMock.swift in Sources */,
+				61245E292CCE788200B368AA /* GetHeroesAPIRequestMock.swift in Sources */,
 				61245E192CCE710F00B368AA /* URLProtocolMock.swift in Sources */,
 				61245E172CCE70BC00B368AA /* SecureDataStorageMock.swift in Sources */,
 				61245E242CCE728C00B368AA /* HeroesUseCaseTests.swift in Sources */,

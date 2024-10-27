@@ -10,7 +10,7 @@ import XCTest
 
 final class ApiProviderTests: XCTestCase {
     
-    var sut: ApiProvider!
+    var sut: ApiProviderMock!
 
     override func setUpWithError() throws {
         
@@ -26,7 +26,7 @@ final class ApiProviderTests: XCTestCase {
         let requestProvider = GARequestBuilder(secureStorage: SecureDataStorageMock())
         
         // creamos ApiProvider
-        sut = ApiProvider(session: session, requestBuilder: requestProvider)
+        sut = ApiProviderMock()
         try super.setUpWithError()
     }
 
@@ -69,7 +69,7 @@ final class ApiProviderTests: XCTestCase {
         // llamamos a nuestro método de la api y validamos que la respuesta es  la resperada
         let expectation = expectation(description: "Load Heroes")
         setToken(expecrtedToken)
-        sut.loadHeros { result in
+        sut.loadHeros(name: "") { result in
             switch result {
             case .success(let apiheroes):
                 heroesResponse = apiheroes
@@ -85,7 +85,7 @@ final class ApiProviderTests: XCTestCase {
         wait(for: [expectation], timeout: 1)
         XCTAssertEqual(heroesResponse.count, 26)
         let heroReceived = heroesResponse.first
-        XCTAssertEqual(heroReceived?.id, expectedHero.id)
+        XCTAssertEqual(heroReceived?.identifier, expectedHero.identifier)
         XCTAssertEqual(heroReceived?.name, expectedHero.name)
         XCTAssertEqual(heroReceived?.description, expectedHero.description)
         XCTAssertEqual(heroReceived?.favorite, expectedHero.favorite)
@@ -98,7 +98,7 @@ final class ApiProviderTests: XCTestCase {
         
         // para datos de error es más sencillo, le asignamos el error testar a URLprotocolMock
         let expecrtedToken = "Some Token"
-        var error: GAError?
+        var error: APIErrorResponse?
         URLProtocolMock.error = NSError(domain: "ios.Keepcoding", code: 503)
         
         // When
@@ -107,7 +107,7 @@ final class ApiProviderTests: XCTestCase {
         // llamamos a nuestro método de la api y validamos que la respuesta es  la resperada
         let expectation = expectation(description: "Load Heroes Error")
         setToken(expecrtedToken)
-        sut.loadHeros { result in
+        sut.loadHeros(name: "") { result in
             switch result {
             case .success( _):
                 XCTFail("Error expected")
@@ -121,7 +121,7 @@ final class ApiProviderTests: XCTestCase {
         // Validamso que tenemos el error y su mensaje.
         wait(for: [expectation], timeout: 2)
         let receivedError = try XCTUnwrap(error)
-        XCTAssertEqual(receivedError.description, "Received error from server \(503)")
+        XCTAssertEqual(receivedError.message, "Received error from server \(503)")
     }
     
     func setToken(_ token: String) {

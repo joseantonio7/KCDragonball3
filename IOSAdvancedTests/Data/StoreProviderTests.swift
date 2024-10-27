@@ -15,7 +15,7 @@ import CoreData
 // Subclase de StoreDataProvider para poder testar los casos de error en fetch Heroes
 class StoreDataProviderErrorMock: StoreDataProvider {
     override func perform<T>(request: NSFetchRequest<T>) throws -> [T] {
-        throw GAError.noDataReceived
+        throw APIErrorResponse.empty("")
     }
 }
 
@@ -43,7 +43,7 @@ final class StoreProviderTests: XCTestCase {
     func test_addHeroes_shouldReturnTheItemsInserted() throws {
         // Given
         let initialCount = sut.fetchHeroes(filter: nil).count
-        let apiHero = ApiHero(id: "123", name: "name", description: "description", photo: "photo", favorite: false)
+        let apiHero = ApiHero(identifier: "123", name: "name", description: "description", photo: "photo", favorite: false)
         
         // When
         sut.add(heroes: [apiHero])
@@ -54,7 +54,7 @@ final class StoreProviderTests: XCTestCase {
         // Validamos los resueltados y que el  los valores de los atributos del objeto son los corectos.
         XCTAssertEqual(finalCount, initialCount + 1)
         let hero = try XCTUnwrap(heroes.first)  // Nos permite desenpaquetar un opcional de forma segura, si no falla el test
-        XCTAssertEqual(hero.id, apiHero.id)
+        XCTAssertEqual(hero.identifier, apiHero.identifier)
         XCTAssertEqual(hero.name, apiHero.name)
         XCTAssertEqual(hero.info, apiHero.description)
         XCTAssertEqual(hero.photo, apiHero.photo)
@@ -64,8 +64,8 @@ final class StoreProviderTests: XCTestCase {
     func test_fetchHeroes_ShoulBeSortedAsc() throws {
         // Given
         let initialCount = sut.fetchHeroes(filter: nil).count
-        let apiHero = ApiHero(id: "123", name: "Luis", description: "description", photo: "photo", favorite: true)
-        let apiHero2 = ApiHero(id: "1234", name: "Alberto", description: "description", photo: "photo", favorite: false)
+        let apiHero = ApiHero(identifier: "123", name: "Luis", description: "description", photo: "photo", favorite: true)
+        let apiHero2 = ApiHero(identifier: "1234", name: "Alberto", description: "description", photo: "photo", favorite: false)
         
         // When
         sut.add(heroes: [apiHero, apiHero2])
@@ -76,7 +76,7 @@ final class StoreProviderTests: XCTestCase {
         XCTAssertEqual(initialCount, 0)
         let hero = try XCTUnwrap(heroes.first)
         
-        XCTAssertEqual(hero.id, apiHero2.id)
+        XCTAssertEqual(hero.identifier, apiHero2.identifier)
         XCTAssertEqual(hero.name, apiHero2.name)
         XCTAssertEqual(hero.info, apiHero2.description)
         XCTAssertEqual(hero.photo, apiHero2.photo)
@@ -85,8 +85,8 @@ final class StoreProviderTests: XCTestCase {
     
     func test_addLocations_ShouldInsertLocationAndAssociateHero() throws {
         // Given
-        let apiHero = ApiHero(id: "123", name: "Luis", description: "description", photo: "photo", favorite: true)
-        let apiLocation = ApiLocation(id: "id", date: "date", latitude: "0000", longitude: "11111", hero: apiHero)
+        let apiHero = ApiHero(identifier: "123", name: "Luis", description: "description", photo: "photo", favorite: true)
+        let apiLocation = ApiLocation(identifier: "id", date: "date", latitude: "0000", longitude: "11111", hero: apiHero)
         
         //When
         sut.add(heroes: [apiHero])
@@ -99,7 +99,7 @@ final class StoreProviderTests: XCTestCase {
         XCTAssertEqual(hero.locations?.count, 1)
         let location = try XCTUnwrap(hero.locations?.first)
         
-        XCTAssertEqual(location.id, apiLocation.id)
+        XCTAssertEqual(location.identifier, apiLocation.identifier)
         XCTAssertEqual(location.date, apiLocation.date)
         XCTAssertEqual(location.latitude, apiLocation.latitude)
         XCTAssertEqual(location.longitude, apiLocation.longitude)
@@ -110,8 +110,8 @@ final class StoreProviderTests: XCTestCase {
     func test_fetchHeroes_Error_ShouldReturnAndEmptyAray() throws {
 
         // Given
-        let apiHero = ApiHero(id: "123", name: "Luis", description: "description", photo: "photo", favorite: true)
-        let apiLocation = ApiLocation(id: "id", date: "date", latitude: "0000", longitude: "11111", hero: apiHero)
+        let apiHero = ApiHero(identifier: "123", name: "Luis", description: "description", photo: "photo", favorite: true)
+        let apiLocation = ApiLocation(identifier: "id", date: "date", latitude: "0000", longitude: "11111", hero: apiHero)
         
         //Sobreescribimos sut con el Mock de Error
         sut = StoreDataProviderErrorMock(persistency: .inMemory)
