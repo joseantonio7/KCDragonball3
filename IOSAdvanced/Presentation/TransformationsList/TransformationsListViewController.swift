@@ -1,16 +1,25 @@
+//
+//  TransformationsListViewController.swift
+//  IOSAdvanced
+//
+//  Created by José Antonio Aravena on 27-10-24.
+//
+
+
 import UIKit
 
-final class HeroesListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
-    @IBOutlet private weak var tableView: UITableView!
-    @IBOutlet private weak var spinner: UIActivityIndicatorView!
-    @IBOutlet private weak var errorContainer: UIStackView!
-    @IBOutlet private weak var errorLabel: UILabel!
+final class TransformationsListViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     
-    private let viewModel: HeroesListViewModel
+    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var errorContainer: UIStackView!
+    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var spinner: UIActivityIndicatorView!
     
-    init(viewModel: HeroesListViewModel) {
+    private let viewModel: TransformationsListViewModel
+    
+    init(viewModel: TransformationsListViewModel) {
         self.viewModel = viewModel
-        super.init(nibName: "HeroesListView", bundle: Bundle(for: type(of: self)))
+        super.init(nibName: "TransformationsListView", bundle: Bundle(for: type(of: self)))
     }
     
     required init?(coder: NSCoder) {
@@ -22,15 +31,10 @@ final class HeroesListViewController: UIViewController, UITableViewDataSource, U
         tableView.dataSource = self
         tableView.delegate = self
         
-        tableView.register(HeroTableViewCell.nib, forCellReuseIdentifier: HeroTableViewCell.reuseIdentifier)
+        tableView.register(TransformationTableViewCell.nib, forCellReuseIdentifier: TransformationTableViewCell.reuseIdentifier)
         
         bind()
         viewModel.load()
-        navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Logout", style: .plain, target: self, action: #selector(logoutTapped))
-    }
-    
-    @IBAction func onRetryTapped(_ sender: Any) {
-        
     }
     
     // MARK: - States
@@ -68,7 +72,7 @@ final class HeroesListViewController: UIViewController, UITableViewDataSource, U
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.heroes.count
+        viewModel.transformations.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -76,29 +80,24 @@ final class HeroesListViewController: UIViewController, UITableViewDataSource, U
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: HeroTableViewCell.reuseIdentifier, for: indexPath)
-        if let cell = cell as? HeroTableViewCell {
-            let hero = viewModel.heroes[indexPath.row]
-            cell.setAvatar(hero.photo)
-            cell.setHeroName(hero.name)
+        let cell = tableView.dequeueReusableCell(withIdentifier: TransformationTableViewCell.reuseIdentifier, for: indexPath)
+        if let cell = cell as? TransformationTableViewCell {
+            let transformation = viewModel.transformations[indexPath.row]
+            cell.setAvatar(transformation.photo)
+            cell.setTransformationName(transformation.name)
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let hero = viewModel.heroes[indexPath.row]
+        let transformation = viewModel.transformations[indexPath.row]
     
-        let detailViewController = HeroDetailBuilder().build(hero: hero)
-        navigationController?.pushViewController(detailViewController, animated: true)
-    }
-    
-    @objc func logoutTapped(){
-        SecureDataStore.shared.deleteToken()
-        StoreDataProvider.shared.clearBBDD()
-        present(LoginBuilder().build(), animated: true)
+//        let detailViewController = TransformationDetailBuilder().build(transformation: transformation)
+//        navigationController?.pushViewController(detailViewController, animated: true)
     }
 
 }
 #Preview {
-    HeroesListBuilder().build()
+    TransformationsListBuilder().build()
 }
+

@@ -31,7 +31,6 @@ final class LoginUseCase: LoginUseCaseContract {
             }
     }
     
-    
     private func validateUsername(_ username: String) -> Bool {
         username.contains("@") && !username.isEmpty
     }

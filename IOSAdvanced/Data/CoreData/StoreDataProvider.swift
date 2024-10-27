@@ -101,7 +101,7 @@ extension StoreDataProvider {
             newLocation.date = location.date
             
             if let heroId = location.hero?.identifier {
-                let predicate = NSPredicate(format: "id == %@", heroId)
+                let predicate = NSPredicate(format: "identifier == %@", heroId)
                 let hero = fetchHeroes(filter: predicate).first
                 newLocation.hero = hero
             }
@@ -117,7 +117,7 @@ extension StoreDataProvider {
             newTransformation.photo = transformation.photo
             
             if let heroId = transformation.hero?.identifier {
-                let predicate = NSPredicate(format: "id == %@", heroId)
+                let predicate = NSPredicate(format: "identifier == %@", heroId)
                 let hero = fetchHeroes(filter: predicate).first
                 newTransformation.hero = hero
             }

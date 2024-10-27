@@ -27,7 +27,6 @@
 		61245C4F2CCD2DBD00B368AA /* HeroUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C072CCD2DBD00B368AA /* HeroUseCase.swift */; };
 		61245C512CCD2DBD00B368AA /* HeroDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C092CCD2DBD00B368AA /* HeroDetailUseCase.swift */; };
 		61245C522CCD2DBD00B368AA /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C0A2CCD2DBD00B368AA /* LoginUseCase.swift */; };
-		61245C532CCD2DBD00B368AA /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C0D2CCD2DBD00B368AA /* AsyncImageView.swift */; };
 		61245C542CCD2DBD00B368AA /* HeroDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C0F2CCD2DBD00B368AA /* HeroDetailBuilder.swift */; };
 		61245C552CCD2DBD00B368AA /* HeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C112CCD2DBD00B368AA /* HeroDetailViewController.swift */; };
 		61245C562CCD2DBD00B368AA /* HeroDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C122CCD2DBD00B368AA /* HeroDetailViewModel.swift */; };
@@ -62,6 +61,16 @@
 		61245CFD2CCD97AE00B368AA /* MOHero+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CF72CCD97AE00B368AA /* MOHero+CoreDataClass.swift */; };
 		61245CFF2CCD97AE00B368AA /* MOLocation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CF92CCD97AE00B368AA /* MOLocation+CoreDataClass.swift */; };
 		61245D012CCD97AE00B368AA /* MOTransformation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CFB2CCD97AE00B368AA /* MOTransformation+CoreDataClass.swift */; };
+		61245D822CCDDA3100B368AA /* MKAnnotation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245D812CCDDA3100B368AA /* MKAnnotation.swift */; };
+		61245D842CCDDA7000B368AA /* HeroAnnotationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245D832CCDDA7000B368AA /* HeroAnnotationView.swift */; };
+		61245D8B2CCDFB9200B368AA /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 61245D8A2CCDFB9200B368AA /* Kingfisher */; };
+		61245D8D2CCE01FE00B368AA /* TransformationListUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245D8C2CCE01FE00B368AA /* TransformationListUseCase.swift */; };
+		61245D902CCE034100B368AA /* TransformationsListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245D8F2CCE034100B368AA /* TransformationsListBuilder.swift */; };
+		61245D922CCE03BB00B368AA /* TransformationsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245D912CCE03BB00B368AA /* TransformationsListViewModel.swift */; };
+		61245D992CCE0A1B00B368AA /* TransformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245D972CCE0A1B00B368AA /* TransformationTableViewCell.swift */; };
+		61245D9A2CCE0A1B00B368AA /* TransformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61245D982CCE0A1B00B368AA /* TransformationTableViewCell.xib */; };
+		61245D9C2CCE0D0700B368AA /* TransformationsListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61245D9B2CCE0D0700B368AA /* TransformationsListView.xib */; };
+		61245D9E2CCE118200B368AA /* TransformationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245D9D2CCE118200B368AA /* TransformationsListViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -95,7 +104,6 @@
 		61245C072CCD2DBD00B368AA /* HeroUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroUseCase.swift; sourceTree = "<group>"; };
 		61245C092CCD2DBD00B368AA /* HeroDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailUseCase.swift; sourceTree = "<group>"; };
 		61245C0A2CCD2DBD00B368AA /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
-		61245C0D2CCD2DBD00B368AA /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		61245C0F2CCD2DBD00B368AA /* HeroDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailBuilder.swift; sourceTree = "<group>"; };
 		61245C102CCD2DBD00B368AA /* HeroDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HeroDetailView.xib; sourceTree = "<group>"; };
 		61245C112CCD2DBD00B368AA /* HeroDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailViewController.swift; sourceTree = "<group>"; };
@@ -137,6 +145,15 @@
 		61245CF72CCD97AE00B368AA /* MOHero+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MOHero+CoreDataClass.swift"; sourceTree = "<group>"; };
 		61245CF92CCD97AE00B368AA /* MOLocation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MOLocation+CoreDataClass.swift"; sourceTree = "<group>"; };
 		61245CFB2CCD97AE00B368AA /* MOTransformation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MOTransformation+CoreDataClass.swift"; sourceTree = "<group>"; };
+		61245D812CCDDA3100B368AA /* MKAnnotation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MKAnnotation.swift; sourceTree = "<group>"; };
+		61245D832CCDDA7000B368AA /* HeroAnnotationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroAnnotationView.swift; sourceTree = "<group>"; };
+		61245D8C2CCE01FE00B368AA /* TransformationListUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationListUseCase.swift; sourceTree = "<group>"; };
+		61245D8F2CCE034100B368AA /* TransformationsListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationsListBuilder.swift; sourceTree = "<group>"; };
+		61245D912CCE03BB00B368AA /* TransformationsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationsListViewModel.swift; sourceTree = "<group>"; };
+		61245D972CCE0A1B00B368AA /* TransformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationTableViewCell.swift; sourceTree = "<group>"; };
+		61245D982CCE0A1B00B368AA /* TransformationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransformationTableViewCell.xib; sourceTree = "<group>"; };
+		61245D9B2CCE0D0700B368AA /* TransformationsListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransformationsListView.xib; sourceTree = "<group>"; };
+		61245D9D2CCE118200B368AA /* TransformationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationsListViewController.swift; sourceTree = "<group>"; };
 		F84020152CAB22410051B4F7 /* IOSAdvanced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSAdvanced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F840202B2CAB22430051B4F7 /* IOSAdvancedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSAdvancedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F84020352CAB22430051B4F7 /* IOSAdvancedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSAdvancedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -147,6 +164,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61245D8B2CCDFB9200B368AA /* Kingfisher in Frameworks */,
 				61245CF22CCD756A00B368AA /* KeychainSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -226,6 +244,7 @@
 			children = (
 				61245C072CCD2DBD00B368AA /* HeroUseCase.swift */,
 				61245C092CCD2DBD00B368AA /* HeroDetailUseCase.swift */,
+				61245D8C2CCE01FE00B368AA /* TransformationListUseCase.swift */,
 				61245C0A2CCD2DBD00B368AA /* LoginUseCase.swift */,
 			);
 			path = UseCases;
@@ -240,17 +259,11 @@
 			path = Domain;
 			sourceTree = "<group>";
 		};
-		61245C0E2CCD2DBD00B368AA /* CustomViews */ = {
-			isa = PBXGroup;
-			children = (
-				61245C0D2CCD2DBD00B368AA /* AsyncImageView.swift */,
-			);
-			path = CustomViews;
-			sourceTree = "<group>";
-		};
 		61245C132CCD2DBD00B368AA /* HeroDetail */ = {
 			isa = PBXGroup;
 			children = (
+				61245D832CCDDA7000B368AA /* HeroAnnotationView.swift */,
+				61245D812CCDDA3100B368AA /* MKAnnotation.swift */,
 				61245C0F2CCD2DBD00B368AA /* HeroDetailBuilder.swift */,
 				61245C102CCD2DBD00B368AA /* HeroDetailView.xib */,
 				61245C112CCD2DBD00B368AA /* HeroDetailViewController.swift */,
@@ -313,7 +326,7 @@
 		61245C312CCD2DBD00B368AA /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				61245C0E2CCD2DBD00B368AA /* CustomViews */,
+				61245D8E2CCE031D00B368AA /* TransformationsList */,
 				61245C132CCD2DBD00B368AA /* HeroDetail */,
 				61245C1C2CCD2DBD00B368AA /* HeroesList */,
 				61245C212CCD2DBD00B368AA /* Login */,
@@ -404,6 +417,35 @@
 			path = APIModel;
 			sourceTree = "<group>";
 		};
+		61245D8E2CCE031D00B368AA /* TransformationsList */ = {
+			isa = PBXGroup;
+			children = (
+				61245D962CCE09E500B368AA /* Cells */,
+				61245D9B2CCE0D0700B368AA /* TransformationsListView.xib */,
+				61245D9D2CCE118200B368AA /* TransformationsListViewController.swift */,
+				61245D8F2CCE034100B368AA /* TransformationsListBuilder.swift */,
+				61245D912CCE03BB00B368AA /* TransformationsListViewModel.swift */,
+			);
+			path = TransformationsList;
+			sourceTree = "<group>";
+		};
+		61245D952CCE09CE00B368AA /* TransformationCell */ = {
+			isa = PBXGroup;
+			children = (
+				61245D972CCE0A1B00B368AA /* TransformationTableViewCell.swift */,
+				61245D982CCE0A1B00B368AA /* TransformationTableViewCell.xib */,
+			);
+			path = TransformationCell;
+			sourceTree = "<group>";
+		};
+		61245D962CCE09E500B368AA /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				61245D952CCE09CE00B368AA /* TransformationCell */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		F840200C2CAB22410051B4F7 = {
 			isa = PBXGroup;
 			children = (
@@ -442,6 +484,7 @@
 			name = IOSAdvanced;
 			packageProductDependencies = (
 				61245CF12CCD756A00B368AA /* KeychainSwift */,
+				61245D8A2CCDFB9200B368AA /* Kingfisher */,
 			);
 			productName = SWPatterns;
 			productReference = F84020152CAB22410051B4F7 /* IOSAdvanced.app */;
@@ -521,6 +564,7 @@
 			minimizedProjectReferenceProxies = 1;
 			packageReferences = (
 				61245CF02CCD756A00B368AA /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				61245D892CCDFB5500B368AA /* XCRemoteSwiftPackageReference "Kingfisher" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F84020162CAB22410051B4F7 /* Products */;
@@ -541,8 +585,10 @@
 			files = (
 				61245C3A2CCD2DBD00B368AA /* HeroDetailView.xib in Resources */,
 				61245C3B2CCD2DBD00B368AA /* HeroTableViewCell.xib in Resources */,
+				61245D9A2CCE0A1B00B368AA /* TransformationTableViewCell.xib in Resources */,
 				61245C3C2CCD2DBD00B368AA /* HeroesListView.xib in Resources */,
 				61245C3D2CCD2DBD00B368AA /* LoginView.xib in Resources */,
+				61245D9C2CCE0D0700B368AA /* TransformationsListView.xib in Resources */,
 				61245C3E2CCD2DBD00B368AA /* SplashView.xib in Resources */,
 				61245C412CCD2DBD00B368AA /* Assets.xcassets in Resources */,
 				61245C432CCD2DBD00B368AA /* LaunchScreen.storyboard in Resources */,
@@ -572,23 +618,26 @@
 			files = (
 				61245C452CCD2DBD00B368AA /* APIErrorResponse.swift in Sources */,
 				61245CBD2CCD4FFE00B368AA /* Location.swift in Sources */,
+				61245D992CCE0A1B00B368AA /* TransformationTableViewCell.swift in Sources */,
 				61245C462CCD2DBD00B368AA /* APIInterceptor.swift in Sources */,
 				61245C472CCD2DBD00B368AA /* APIRequest.swift in Sources */,
 				61245C482CCD2DBD00B368AA /* APISession.swift in Sources */,
 				61245C492CCD2DBD00B368AA /* GetHeroesAPIRequest.swift in Sources */,
 				61245C4A2CCD2DBD00B368AA /* GetHeroTransformationsAPIRequest.swift in Sources */,
+				61245D902CCE034100B368AA /* TransformationsListBuilder.swift in Sources */,
 				61245C4B2CCD2DBD00B368AA /* LoginAPIRequest.swift in Sources */,
 				61245C4C2CCD2DBD00B368AA /* Credentials.swift in Sources */,
 				61245C4D2CCD2DBD00B368AA /* Hero.swift in Sources */,
 				61245C4E2CCD2DBD00B368AA /* Transformation.swift in Sources */,
 				61245CF62CCD913E00B368AA /* GetHeroLocalizationsAPIRequest.swift in Sources */,
+				61245D842CCDDA7000B368AA /* HeroAnnotationView.swift in Sources */,
 				61245C4F2CCD2DBD00B368AA /* HeroUseCase.swift in Sources */,
 				61245CED2CCD6C6D00B368AA /* ApiLocation.swift in Sources */,
+				61245D922CCE03BB00B368AA /* TransformationsListViewModel.swift in Sources */,
 				61245CEB2CCD6C0400B368AA /* ApiTransformation.swift in Sources */,
 				61245C512CCD2DBD00B368AA /* HeroDetailUseCase.swift in Sources */,
 				61245C522CCD2DBD00B368AA /* LoginUseCase.swift in Sources */,
 				61245CEF2CCD74C100B368AA /* SecureDataStoreProtocol.swift in Sources */,
-				61245C532CCD2DBD00B368AA /* AsyncImageView.swift in Sources */,
 				61245C542CCD2DBD00B368AA /* HeroDetailBuilder.swift in Sources */,
 				61245C552CCD2DBD00B368AA /* HeroDetailViewController.swift in Sources */,
 				61245CE92CCD6BAF00B368AA /* ApiHero.swift in Sources */,
@@ -603,7 +652,10 @@
 				61245C5D2CCD2DBD00B368AA /* LoginViewModel.swift in Sources */,
 				61245C5E2CCD2DBD00B368AA /* SplashBuilder.swift in Sources */,
 				61245C5F2CCD2DBD00B368AA /* SplashViewController.swift in Sources */,
+				61245D8D2CCE01FE00B368AA /* TransformationListUseCase.swift in Sources */,
 				61245C602CCD2DBD00B368AA /* SplashViewModel.swift in Sources */,
+				61245D9E2CCE118200B368AA /* TransformationsListViewController.swift in Sources */,
+				61245D822CCDDA3100B368AA /* MKAnnotation.swift in Sources */,
 				61245CFD2CCD97AE00B368AA /* MOHero+CoreDataClass.swift in Sources */,
 				61245CFF2CCD97AE00B368AA /* MOLocation+CoreDataClass.swift in Sources */,
 				61245D012CCD97AE00B368AA /* MOTransformation+CoreDataClass.swift in Sources */,
@@ -675,7 +727,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -707,7 +759,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -984,6 +1036,14 @@
 				minimumVersion = 24.0.0;
 			};
 		};
+		61245D892CCDFB5500B368AA /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -991,6 +1051,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 61245CF02CCD756A00B368AA /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
+		};
+		61245D8A2CCDFB9200B368AA /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 61245D892CCDFB5500B368AA /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
 		};
 /* End XCSwiftPackageProductDependency section */
 

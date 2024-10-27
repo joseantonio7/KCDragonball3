@@ -3,20 +3,18 @@
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23084"/>
+        <capability name="Map view configurations" minToolsVersion="14.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeroDetailViewController" customModule="SWPatterns" customModuleProvider="target">
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeroDetailViewController" customModule="IOSAdvanced" customModuleProvider="target">
             <connections>
-                <outlet property="boton" destination="WcN-Xz-zdO" id="q6m-3B-gYd"/>
                 <outlet property="container" destination="UZe-B0-yqN" id="38Z-ve-Pew"/>
-                <outlet property="errorContainer" destination="RnZ-H0-XDV" id="ObB-AF-1Kc"/>
-                <outlet property="errorLabel" destination="NpC-rW-nv5" id="82i-ci-nM1"/>
                 <outlet property="heroDescription" destination="uZd-wH-8u8" id="O1R-so-FD2"/>
                 <outlet property="heroName" destination="wSN-EL-OU7" id="R68-Mf-cFQ"/>
-                <outlet property="image" destination="hzM-vO-u31" id="j3c-Jj-fd2"/>
+                <outlet property="mapView" destination="uMX-9x-7lq" id="ak4-CJ-aXX"/>
                 <outlet property="spinner" destination="SXp-og-aLW" id="suR-zp-Sgq"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -29,58 +27,34 @@
                 <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="SXp-og-aLW">
                     <rect key="frame" x="186.66666666666666" y="416" width="20" height="20"/>
                 </activityIndicatorView>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="RnZ-H0-XDV">
-                    <rect key="frame" x="36" y="416" width="321" height="20.333333333333314"/>
-                    <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error loading Hero" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NpC-rW-nv5">
-                            <rect key="frame" x="0.0" y="0.0" width="321" height="20.333333333333332"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                    </subviews>
-                </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="UZe-B0-yqN">
                     <rect key="frame" x="16" y="59" width="361" height="759"/>
                     <subviews>
-                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="hzM-vO-u31" customClass="AsyncImageView" customModule="SWPatterns" customModuleProvider="target">
-                            <rect key="frame" x="0.0" y="0.0" width="361" height="128"/>
-                        </imageView>
+                        <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uMX-9x-7lq">
+                            <rect key="frame" x="0.0" y="0.0" width="361" height="718.33333333333337"/>
+                            <standardMapConfiguration key="preferredConfiguration"/>
+                        </mapView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSN-EL-OU7" userLabel="title">
-                            <rect key="frame" x="0.0" y="128" width="361" height="550.66666666666663"/>
+                            <rect key="frame" x="0.0" y="718.33333333333337" width="361" height="20.333333333333371"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZd-wH-8u8" userLabel="Description">
-                            <rect key="frame" x="0.0" y="678.66666666666663" width="361" height="20.333333333333371"/>
+                            <rect key="frame" x="0.0" y="738.66666666666663" width="361" height="20.333333333333371"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WcN-Xz-zdO">
-                            <rect key="frame" x="0.0" y="699" width="361" height="60"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="60" id="fYr-un-chn"/>
-                            </constraints>
-                            <state key="normal" title="Button"/>
-                            <buttonConfiguration key="configuration" style="filled" title="Transformaciones"/>
-                            <connections>
-                                <action selector="didPressTransformations:" destination="-1" eventType="touchUpInside" id="JuN-Qi-JjJ"/>
-                            </connections>
-                        </button>
                     </subviews>
                 </stackView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="RnZ-H0-XDV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="36" id="1fU-5M-v2Q"/>
                 <constraint firstItem="SXp-og-aLW" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="WAN-0F-W3P"/>
-                <constraint firstItem="RnZ-H0-XDV" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="Xsz-FH-GSQ"/>
                 <constraint firstItem="UZe-B0-yqN" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="cCs-6a-lLi"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="UZe-B0-yqN" secondAttribute="bottom" id="ce5-5j-dh4"/>
-                <constraint firstItem="RnZ-H0-XDV" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="e2K-e2-EaS"/>
                 <constraint firstItem="SXp-og-aLW" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="kgz-J4-wDJ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="UZe-B0-yqN" secondAttribute="trailing" constant="16" id="nN1-u9-MFy"/>
                 <constraint firstItem="UZe-B0-yqN" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="nr4-UB-yIY"/>

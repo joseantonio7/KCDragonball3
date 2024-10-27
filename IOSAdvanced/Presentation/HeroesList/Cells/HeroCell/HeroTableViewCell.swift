@@ -1,19 +1,20 @@
 import UIKit
+import Kingfisher
 
 final class HeroTableViewCell: UITableViewCell {
     static let reuseIdentifier = "HeroTableViewCell"
     static var nib: UINib { UINib(nibName: "HeroTableViewCell", bundle: Bundle(for: HeroTableViewCell.self)) }
     
+    @IBOutlet weak var avatar: UIImageView!
     @IBOutlet private weak var heroName: UILabel!
-    @IBOutlet private weak var avatar: AsyncImageView!
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        avatar.cancel()
     }
     
-    func setAvatar(_ avatar: String) {
-        self.avatar.setImage(avatar)
+    func setAvatar(_ photo: String) {
+        let options = KingfisherOptionsInfo([.transition(.fade(0.3)), .forceTransition])
+        avatar.kf.setImage(with: URL(string: photo), options: options)
     }
     
     func setHeroName(_ heroName: String) {

@@ -1,45 +1,25 @@
+//
+//  HeroDetailUseCaseProtocol.swift
+//  IOSAdvanced
+//
+//  Created by José Antonio Aravena on 27-10-24.
+//
+
+
 import Foundation
 
-protocol HeroDetailUseCaseProtocol {
-    func loadLocationsForHeroWith(id: String, completion: @escaping ((Result<[Location], APIErrorResponse>) -> Void))
+protocol TransformationUseCaseProtocol {
     func loadTransformationsForHeroWith(id: String, completion: @escaping ((Result<[Transformation], APIErrorResponse>) -> Void))
 }
 
-class HeroDetailUseCase: HeroDetailUseCaseProtocol {
-    private var apiLocationProvider: GetHeroLocalizationsAPIRequest?
+class TransformationListUseCase: TransformationUseCaseProtocol {
     private var apiTransformationProvider: GetHeroTransformationsAPIRequest?
     private var storeDataProvider: StoreDataProvider
     
     init(storeDataProvider: StoreDataProvider = .shared) {
         self.storeDataProvider = storeDataProvider
     }
-    
-    func loadLocationsForHeroWith(id: String, completion: @escaping ((Result<[Location], APIErrorResponse>) -> Void)) {
-        guard let hero = self.getHeroWith(id: id) else {
-            completion(.failure(.noHero(id)))
-            return
-        }
-        let bdLocations = hero.locations ?? []
-        if bdLocations.isEmpty {
-            GetHeroLocalizationsAPIRequest(identifier: id).perform { result in
-                switch result {
-                case .success(let apiLocations):
-                    DispatchQueue.main.async {
-                        self.storeDataProvider.add(locations: apiLocations)
-                        let bdLocations = hero.locations ?? []
-                        let domainLocations = bdLocations.map({Location(moLocation: $0)})
-                        completion(.success(domainLocations))
-                    }
-                case .failure(let error):
-                    completion(.failure(error))
-                }
-            }
-            
-        } else {
-            let domainLocations = bdLocations.map({Location(moLocation: $0)})
-            completion(.success(domainLocations))
-        }
-    }
+
     func loadTransformationsForHeroWith(id: String, completion: @escaping ((Result<[Transformation], APIErrorResponse>) -> Void)) {
         guard let hero = self.getHeroWith(id: id) else {
             completion(.failure(.noHero(id)))
