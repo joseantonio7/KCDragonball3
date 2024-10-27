@@ -34,7 +34,6 @@ final class TransformationsListViewController: UIViewController, UITableViewData
         tableView.delegate = self
         
         tableView.register(TransformationTableViewCell.nib, forCellReuseIdentifier: TransformationTableViewCell.reuseIdentifier)
-        
         bind()
         viewModel.load(id: id)
     }
@@ -94,8 +93,8 @@ final class TransformationsListViewController: UIViewController, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let transformation = viewModel.transformations[indexPath.row]
     
-//        let detailViewController = TransformationDetailBuilder().build(transformation: transformation)
-//        navigationController?.pushViewController(detailViewController, animated: true)
+        let detailViewController = TransformationDetailBuilder().build(id: transformation.identifier)
+        navigationController?.pushViewController(detailViewController, animated: true)
     }
 
 }

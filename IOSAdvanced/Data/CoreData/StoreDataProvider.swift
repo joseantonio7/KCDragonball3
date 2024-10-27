@@ -92,6 +92,21 @@ extension StoreDataProvider {
         }
     }
     
+    func fetchTransformations(filter: NSPredicate?,
+                              sortAscending: Bool = true) -> [MOTransformation] {
+        let request = MOTransformation.fetchRequest()
+        request.predicate = filter
+        let sortDescriptor = NSSortDescriptor(keyPath: \MOTransformation.name, ascending: sortAscending)
+        request.sortDescriptors = [sortDescriptor]
+        
+        do {
+            return try self.perform(request: request)
+        } catch {
+            debugPrint("Error loading transformations \(error.localizedDescription)")
+            return []
+        }
+    }
+    
     func add(locations: [ApiLocation]) {
         for location in locations {
             let newLocation = MOLocation(context: context)

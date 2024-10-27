@@ -71,6 +71,11 @@
 		61245D9A2CCE0A1B00B368AA /* TransformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61245D982CCE0A1B00B368AA /* TransformationTableViewCell.xib */; };
 		61245D9C2CCE0D0700B368AA /* TransformationsListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61245D9B2CCE0D0700B368AA /* TransformationsListView.xib */; };
 		61245D9E2CCE118200B368AA /* TransformationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245D9D2CCE118200B368AA /* TransformationsListViewController.swift */; };
+		61245DA12CCE271600B368AA /* TransformationDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245DA02CCE271600B368AA /* TransformationDetailBuilder.swift */; };
+		61245DA32CCE277B00B368AA /* TransformationDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245DA22CCE277B00B368AA /* TransformationDetailUseCase.swift */; };
+		61245DA52CCE2BBA00B368AA /* TransformationDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245DA42CCE2BBA00B368AA /* TransformationDetailViewModel.swift */; };
+		61245DA82CCE2E6300B368AA /* TransformationDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245DA62CCE2E6300B368AA /* TransformationDetailViewController.swift */; };
+		61245DA92CCE2E6300B368AA /* TransformationDetailView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61245DA72CCE2E6300B368AA /* TransformationDetailView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +159,11 @@
 		61245D982CCE0A1B00B368AA /* TransformationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransformationTableViewCell.xib; sourceTree = "<group>"; };
 		61245D9B2CCE0D0700B368AA /* TransformationsListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransformationsListView.xib; sourceTree = "<group>"; };
 		61245D9D2CCE118200B368AA /* TransformationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationsListViewController.swift; sourceTree = "<group>"; };
+		61245DA02CCE271600B368AA /* TransformationDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationDetailBuilder.swift; sourceTree = "<group>"; };
+		61245DA22CCE277B00B368AA /* TransformationDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationDetailUseCase.swift; sourceTree = "<group>"; };
+		61245DA42CCE2BBA00B368AA /* TransformationDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationDetailViewModel.swift; sourceTree = "<group>"; };
+		61245DA62CCE2E6300B368AA /* TransformationDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationDetailViewController.swift; sourceTree = "<group>"; };
+		61245DA72CCE2E6300B368AA /* TransformationDetailView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransformationDetailView.xib; sourceTree = "<group>"; };
 		F84020152CAB22410051B4F7 /* IOSAdvanced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSAdvanced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F840202B2CAB22430051B4F7 /* IOSAdvancedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSAdvancedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F84020352CAB22430051B4F7 /* IOSAdvancedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSAdvancedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -242,6 +252,7 @@
 		61245C0B2CCD2DBD00B368AA /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
+				61245DA22CCE277B00B368AA /* TransformationDetailUseCase.swift */,
 				61245C072CCD2DBD00B368AA /* HeroUseCase.swift */,
 				61245C092CCD2DBD00B368AA /* HeroDetailUseCase.swift */,
 				61245D8C2CCE01FE00B368AA /* TransformationListUseCase.swift */,
@@ -327,6 +338,7 @@
 			isa = PBXGroup;
 			children = (
 				61245D8E2CCE031D00B368AA /* TransformationsList */,
+				61245D9F2CCE26EA00B368AA /* TransformationDetail */,
 				61245C132CCD2DBD00B368AA /* HeroDetail */,
 				61245C1C2CCD2DBD00B368AA /* HeroesList */,
 				61245C212CCD2DBD00B368AA /* Login */,
@@ -444,6 +456,17 @@
 				61245D952CCE09CE00B368AA /* TransformationCell */,
 			);
 			path = Cells;
+			sourceTree = "<group>";
+		};
+		61245D9F2CCE26EA00B368AA /* TransformationDetail */ = {
+			isa = PBXGroup;
+			children = (
+				61245DA02CCE271600B368AA /* TransformationDetailBuilder.swift */,
+				61245DA42CCE2BBA00B368AA /* TransformationDetailViewModel.swift */,
+				61245DA62CCE2E6300B368AA /* TransformationDetailViewController.swift */,
+				61245DA72CCE2E6300B368AA /* TransformationDetailView.xib */,
+			);
+			path = TransformationDetail;
 			sourceTree = "<group>";
 		};
 		F840200C2CAB22410051B4F7 = {
@@ -587,6 +610,7 @@
 				61245C3B2CCD2DBD00B368AA /* HeroTableViewCell.xib in Resources */,
 				61245D9A2CCE0A1B00B368AA /* TransformationTableViewCell.xib in Resources */,
 				61245C3C2CCD2DBD00B368AA /* HeroesListView.xib in Resources */,
+				61245DA92CCE2E6300B368AA /* TransformationDetailView.xib in Resources */,
 				61245C3D2CCD2DBD00B368AA /* LoginView.xib in Resources */,
 				61245D9C2CCE0D0700B368AA /* TransformationsListView.xib in Resources */,
 				61245C3E2CCD2DBD00B368AA /* SplashView.xib in Resources */,
@@ -618,6 +642,7 @@
 			files = (
 				61245C452CCD2DBD00B368AA /* APIErrorResponse.swift in Sources */,
 				61245CBD2CCD4FFE00B368AA /* Location.swift in Sources */,
+				61245DA52CCE2BBA00B368AA /* TransformationDetailViewModel.swift in Sources */,
 				61245D992CCE0A1B00B368AA /* TransformationTableViewCell.swift in Sources */,
 				61245C462CCD2DBD00B368AA /* APIInterceptor.swift in Sources */,
 				61245C472CCD2DBD00B368AA /* APIRequest.swift in Sources */,
@@ -642,6 +667,7 @@
 				61245C552CCD2DBD00B368AA /* HeroDetailViewController.swift in Sources */,
 				61245CE92CCD6BAF00B368AA /* ApiHero.swift in Sources */,
 				61245C562CCD2DBD00B368AA /* HeroDetailViewModel.swift in Sources */,
+				61245DA32CCE277B00B368AA /* TransformationDetailUseCase.swift in Sources */,
 				61245C6A2CCD2E7100B368AA /* Model.xcdatamodeld in Sources */,
 				61245C572CCD2DBD00B368AA /* HeroTableViewCell.swift in Sources */,
 				61245C582CCD2DBD00B368AA /* HeroesListBuilder.swift in Sources */,
@@ -658,8 +684,10 @@
 				61245D822CCDDA3100B368AA /* MKAnnotation.swift in Sources */,
 				61245CFD2CCD97AE00B368AA /* MOHero+CoreDataClass.swift in Sources */,
 				61245CFF2CCD97AE00B368AA /* MOLocation+CoreDataClass.swift in Sources */,
+				61245DA12CCE271600B368AA /* TransformationDetailBuilder.swift in Sources */,
 				61245D012CCD97AE00B368AA /* MOTransformation+CoreDataClass.swift in Sources */,
 				61245C652CCD2DBD00B368AA /* Binding.swift in Sources */,
+				61245DA82CCE2E6300B368AA /* TransformationDetailViewController.swift in Sources */,
 				61245CF42CCD865400B368AA /* StoreDataProvider.swift in Sources */,
 				61245C662CCD2DBD00B368AA /* AppDelegate.swift in Sources */,
 				61245C672CCD2DBD00B368AA /* SceneDelegate.swift in Sources */,
