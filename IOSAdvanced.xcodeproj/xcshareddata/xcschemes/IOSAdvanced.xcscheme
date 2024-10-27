@@ -52,6 +52,17 @@
                ReferencedContainer = "container:IOSAdvanced.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "61245DB72CCE689C00B368AA"
+               BuildableName = "IOSAdvanced2Tests.xctest"
+               BlueprintName = "IOSAdvanced2Tests"
+               ReferencedContainer = "container:IOSAdvanced.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

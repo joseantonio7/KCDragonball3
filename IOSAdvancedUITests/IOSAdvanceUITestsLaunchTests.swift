@@ -7,7 +7,7 @@
 
 import XCTest
 
-final class SWPatternsUITestsLaunchTests: XCTestCase {
+final class IOSAdvanceUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
