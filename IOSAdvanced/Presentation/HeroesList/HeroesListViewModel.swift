@@ -9,19 +9,22 @@ enum HeroesListState: Equatable {
 final class HeroesListViewModel {
     let onStateChanged = Binding<HeroesListState>()
     private(set) var heroes: [Hero] = []
-    private let useCase: GetAllHeroesUseCaseContract
+    private let useCase: HeroUseCaseProtocol
     
-    init(useCase: GetAllHeroesUseCaseContract) {
+    init(useCase: HeroUseCaseProtocol) {
         self.useCase = useCase
     }
     
     func load() {
         onStateChanged.update(newValue: .loading)
-        useCase.execute { [weak self] result in
-            do {
-                self?.heroes = try result.get()
+        
+        
+        useCase.loadHeros(filter: nil) { [weak self] result in
+            switch result {
+            case .success(let heroes):
+                self?.heroes = heroes
                 self?.onStateChanged.update(newValue: .success)
-            } catch {
+            case .failure(let error):
                 self?.onStateChanged.update(newValue: .error(reason: error.localizedDescription))
             }
         }

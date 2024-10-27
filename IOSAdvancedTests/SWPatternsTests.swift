@@ -6,7 +6,7 @@
 //
 
 import XCTest
-@testable import SWPatterns
+@testable import IOSAdvanced
 
 final class SWPatternsTests: XCTestCase {
 

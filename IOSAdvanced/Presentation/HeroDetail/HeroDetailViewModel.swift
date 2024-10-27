@@ -8,25 +8,25 @@ enum HeroDetailState: Equatable {
 
 final class HeroDetailViewModel {
     let onStateChanged = Binding<HeroDetailState>()
-    private(set) var hero: Hero?
-    private let useCase: GetHeroUseCaseContract
-    private let name: String
+    private(set) var hero: Hero
+    private let useCase: HeroDetailUseCase?
+
     
-    init(name: String, useCase: GetHeroUseCaseContract) {
+    init(hero: Hero, useCase: HeroDetailUseCase) {
         self.useCase = useCase
-        self.name = name
+        self.hero = hero
     }
     
     func load() {
         onStateChanged.update(newValue: .loading)
-        useCase.execute(name: name) { [weak self] result in
-            do {
-                self?.hero = try result.get()
+        useCase?.loadTransformationsForHeroWith(id: hero.identifier, completion: { [weak self] result in
+            switch result {
+            case .success(let transformations):
                 self?.onStateChanged.update(newValue: .success)
-            } catch {
+            case .failure(let error):
                 self?.onStateChanged.update(newValue: .error(reason: error.localizedDescription))
             }
-        }
+        })
     }
 }
 

@@ -32,12 +32,6 @@ class HeroDetailViewController: UIViewController {
     
     @IBAction func didPressTransformations(_ sender: Any) {
 
-        guard let hero = viewModel.hero else {
-            boton.isHidden = true
-            return
-        }
-        let transformationsViewController = TransformationsListBuilder().build(identifier: hero.identifier)
-        navigationController?.pushViewController(transformationsViewController, animated: true)
     }
     // MARK: - States
     private func bind() {
@@ -71,9 +65,9 @@ class HeroDetailViewController: UIViewController {
         errorContainer.isHidden = true
         container.isHidden = false
         
-        self.image.setImage(viewModel.hero?.photo ?? "")
-        self.heroName.text = viewModel.hero?.name
-        self.heroDescription.text = viewModel.hero?.description
+        self.image.setImage(viewModel.hero.photo)
+        self.heroName.text = viewModel.hero.name
+        self.heroDescription.text = viewModel.hero.description
     }
     
     

@@ -1,4 +1,4 @@
-@testable import SWPatterns
+@testable import IOSAdvanced
 import XCTest
 
 final class APISessionMock: APISessionContract {

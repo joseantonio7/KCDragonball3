@@ -24,8 +24,11 @@ struct APISession: APISessionContract {
                 if let error {
                     return completion(.failure(error))
                 }
-                guard let httpResponse = response as? HTTPURLResponse, httpResponse.statusCode == 200 else {
+                guard let httpResponse = response as? HTTPURLResponse else {
                     return completion(.failure(APIErrorResponse.network(apiRequest.path)))
+                }
+                if httpResponse.statusCode != 200 {
+                    return completion(.failure(APIErrorResponse.init(url: "", statusCode: httpResponse.statusCode, message: "\(httpResponse.statusCode)")))
                 }
                 return completion(.success(data ?? Data()))
             }.resume()

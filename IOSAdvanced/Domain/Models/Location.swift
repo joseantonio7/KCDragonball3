@@ -11,4 +11,11 @@ struct Location: Equatable {
     let date: String
     let latitude: String
     let longitude: String
+
+    init(moLocation: MOLocation) {
+        self.identifier = moLocation.identifier ?? ""
+        self.date = moLocation.date ?? ""
+        self.latitude = moLocation.latitude ?? ""
+        self.longitude = moLocation.longitude ?? ""
+    }
 }

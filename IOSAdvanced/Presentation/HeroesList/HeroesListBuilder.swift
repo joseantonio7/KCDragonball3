@@ -2,7 +2,7 @@ import UIKit
 
 final class HeroesListBuilder {
     func build() -> UIViewController {
-        let useCase = GetAllHeroesUseCase()
+        let useCase = HeroUseCase(apiProvider: GetHeroesAPIRequest(name: nil), storeDataProvider: StoreDataProvider.shared)
         let viewModel = HeroesListViewModel(useCase: useCase)
         let viewController = HeroesListViewController(viewModel: viewModel)
         

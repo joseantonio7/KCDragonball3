@@ -1,9 +1,9 @@
 import UIKit
 
 final class HeroDetailBuilder {
-    func build(name: String) -> UIViewController {
-        let useCase = GetHeroUseCase()
-        let viewModel = HeroDetailViewModel(name: name, useCase: useCase)
+    func build(hero:Hero) -> UIViewController {
+        let useCase = HeroDetailUseCase()
+        let viewModel = HeroDetailViewModel(hero: hero, useCase: useCase)
         let viewController = HeroDetailViewController(viewModel: viewModel)
         
         return viewController

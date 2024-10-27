@@ -8,16 +8,17 @@ protocol APIRequestInterceptor: APIInterceptor {
 
 
 final class AuthenticationRequestInterceptor: APIRequestInterceptor {
-    private let dataSource: SessionDataSourceContract
+    private let dataSource: SecureDataStore
     
-    init(dataSource: SessionDataSourceContract = SessionDataSource()) {
+    init(dataSource: SecureDataStore = SecureDataStore()) {
         self.dataSource = dataSource
     }
     
     func intercept(request: inout URLRequest) {
-        guard let session = dataSource.getSession() else {
+        guard let session = dataSource.getToken() else {
             return
         }
-        request.setValue("Bearer \(String(decoding: session, as: UTF8.self))", forHTTPHeaderField: "Authorization")
+        print(session)
+        request.setValue("Bearer \(session)", forHTTPHeaderField: "Authorization")
     }
 }

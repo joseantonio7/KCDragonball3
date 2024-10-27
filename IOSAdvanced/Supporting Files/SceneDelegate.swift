@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  SWPatterns
-//
-//  Created by Alberto García-Muñoz on 30/9/24.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {

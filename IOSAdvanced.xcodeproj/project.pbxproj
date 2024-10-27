@@ -12,11 +12,8 @@
 		61245C3C2CCD2DBD00B368AA /* HeroesListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61245C192CCD2DBD00B368AA /* HeroesListView.xib */; };
 		61245C3D2CCD2DBD00B368AA /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61245C1E2CCD2DBD00B368AA /* LoginView.xib */; };
 		61245C3E2CCD2DBD00B368AA /* SplashView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61245C232CCD2DBD00B368AA /* SplashView.xib */; };
-		61245C3F2CCD2DBD00B368AA /* TransformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61245C282CCD2DBD00B368AA /* TransformationTableViewCell.xib */; };
-		61245C402CCD2DBD00B368AA /* TransformationsListView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 61245C2C2CCD2DBD00B368AA /* TransformationsListView.xib */; };
 		61245C412CCD2DBD00B368AA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 61245C332CCD2DBD00B368AA /* Assets.xcassets */; };
 		61245C432CCD2DBD00B368AA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61245C362CCD2DBD00B368AA /* LaunchScreen.storyboard */; };
-		61245C442CCD2DBD00B368AA /* SessionDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245BF72CCD2DBD00B368AA /* SessionDataSource.swift */; };
 		61245C452CCD2DBD00B368AA /* APIErrorResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245BF92CCD2DBD00B368AA /* APIErrorResponse.swift */; };
 		61245C462CCD2DBD00B368AA /* APIInterceptor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245BFA2CCD2DBD00B368AA /* APIInterceptor.swift */; };
 		61245C472CCD2DBD00B368AA /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245BFB2CCD2DBD00B368AA /* APIRequest.swift */; };
@@ -27,9 +24,8 @@
 		61245C4C2CCD2DBD00B368AA /* Credentials.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C032CCD2DBD00B368AA /* Credentials.swift */; };
 		61245C4D2CCD2DBD00B368AA /* Hero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C042CCD2DBD00B368AA /* Hero.swift */; };
 		61245C4E2CCD2DBD00B368AA /* Transformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C052CCD2DBD00B368AA /* Transformation.swift */; };
-		61245C4F2CCD2DBD00B368AA /* GetAllHeroesUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C072CCD2DBD00B368AA /* GetAllHeroesUseCase.swift */; };
-		61245C502CCD2DBD00B368AA /* GetHeroUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C082CCD2DBD00B368AA /* GetHeroUseCase.swift */; };
-		61245C512CCD2DBD00B368AA /* GetTransformationsUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C092CCD2DBD00B368AA /* GetTransformationsUseCase.swift */; };
+		61245C4F2CCD2DBD00B368AA /* HeroUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C072CCD2DBD00B368AA /* HeroUseCase.swift */; };
+		61245C512CCD2DBD00B368AA /* HeroDetailUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C092CCD2DBD00B368AA /* HeroDetailUseCase.swift */; };
 		61245C522CCD2DBD00B368AA /* LoginUseCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C0A2CCD2DBD00B368AA /* LoginUseCase.swift */; };
 		61245C532CCD2DBD00B368AA /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C0D2CCD2DBD00B368AA /* AsyncImageView.swift */; };
 		61245C542CCD2DBD00B368AA /* HeroDetailBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C0F2CCD2DBD00B368AA /* HeroDetailBuilder.swift */; };
@@ -45,10 +41,6 @@
 		61245C5E2CCD2DBD00B368AA /* SplashBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C222CCD2DBD00B368AA /* SplashBuilder.swift */; };
 		61245C5F2CCD2DBD00B368AA /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C242CCD2DBD00B368AA /* SplashViewController.swift */; };
 		61245C602CCD2DBD00B368AA /* SplashViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C252CCD2DBD00B368AA /* SplashViewModel.swift */; };
-		61245C612CCD2DBD00B368AA /* TransformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C272CCD2DBD00B368AA /* TransformationTableViewCell.swift */; };
-		61245C622CCD2DBD00B368AA /* TransformationsListBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C2B2CCD2DBD00B368AA /* TransformationsListBuilder.swift */; };
-		61245C632CCD2DBD00B368AA /* TransformationsListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C2D2CCD2DBD00B368AA /* TransformationsListViewController.swift */; };
-		61245C642CCD2DBD00B368AA /* TransformationsListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C2E2CCD2DBD00B368AA /* TransformationsListViewModel.swift */; };
 		61245C652CCD2DBD00B368AA /* Binding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C302CCD2DBD00B368AA /* Binding.swift */; };
 		61245C662CCD2DBD00B368AA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C322CCD2DBD00B368AA /* AppDelegate.swift */; };
 		61245C672CCD2DBD00B368AA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245C372CCD2DBD00B368AA /* SceneDelegate.swift */; };
@@ -60,15 +52,16 @@
 		61245CC82CCD52B000B368AA /* SWPatternsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CC32CCD52B000B368AA /* SWPatternsTests.swift */; };
 		61245CCC2CCD52B300B368AA /* SWPatternsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CC92CCD52B300B368AA /* SWPatternsUITests.swift */; };
 		61245CCD2CCD52B300B368AA /* SWPatternsUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CCA2CCD52B300B368AA /* SWPatternsUITestsLaunchTests.swift */; };
-		61245CE12CCD684D00B368AA /* MOHero+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CDB2CCD684D00B368AA /* MOHero+CoreDataClass.swift */; };
-		61245CE22CCD684D00B368AA /* MOHero+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CDC2CCD684D00B368AA /* MOHero+CoreDataProperties.swift */; };
-		61245CE32CCD684D00B368AA /* MOLocation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CDD2CCD684D00B368AA /* MOLocation+CoreDataClass.swift */; };
-		61245CE42CCD684D00B368AA /* MOLocation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CDE2CCD684D00B368AA /* MOLocation+CoreDataProperties.swift */; };
-		61245CE52CCD684D00B368AA /* MOTransformation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CDF2CCD684D00B368AA /* MOTransformation+CoreDataClass.swift */; };
-		61245CE62CCD684D00B368AA /* MOTransformation+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CE02CCD684D00B368AA /* MOTransformation+CoreDataProperties.swift */; };
 		61245CE92CCD6BAF00B368AA /* ApiHero.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CE82CCD6BA700B368AA /* ApiHero.swift */; };
 		61245CEB2CCD6C0400B368AA /* ApiTransformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CEA2CCD6BFC00B368AA /* ApiTransformation.swift */; };
 		61245CED2CCD6C6D00B368AA /* ApiLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CEC2CCD6C6D00B368AA /* ApiLocation.swift */; };
+		61245CEF2CCD74C100B368AA /* SecureDataStoreProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CEE2CCD74C100B368AA /* SecureDataStoreProtocol.swift */; };
+		61245CF22CCD756A00B368AA /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 61245CF12CCD756A00B368AA /* KeychainSwift */; };
+		61245CF42CCD865400B368AA /* StoreDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CF32CCD865400B368AA /* StoreDataProvider.swift */; };
+		61245CF62CCD913E00B368AA /* GetHeroLocalizationsAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CF52CCD913E00B368AA /* GetHeroLocalizationsAPIRequest.swift */; };
+		61245CFD2CCD97AE00B368AA /* MOHero+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CF72CCD97AE00B368AA /* MOHero+CoreDataClass.swift */; };
+		61245CFF2CCD97AE00B368AA /* MOLocation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CF92CCD97AE00B368AA /* MOLocation+CoreDataClass.swift */; };
+		61245D012CCD97AE00B368AA /* MOTransformation+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245CFB2CCD97AE00B368AA /* MOTransformation+CoreDataClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -89,7 +82,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		61245BF72CCD2DBD00B368AA /* SessionDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionDataSource.swift; sourceTree = "<group>"; };
 		61245BF92CCD2DBD00B368AA /* APIErrorResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIErrorResponse.swift; sourceTree = "<group>"; };
 		61245BFA2CCD2DBD00B368AA /* APIInterceptor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIInterceptor.swift; sourceTree = "<group>"; };
 		61245BFB2CCD2DBD00B368AA /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
@@ -100,9 +92,8 @@
 		61245C032CCD2DBD00B368AA /* Credentials.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Credentials.swift; sourceTree = "<group>"; };
 		61245C042CCD2DBD00B368AA /* Hero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hero.swift; sourceTree = "<group>"; };
 		61245C052CCD2DBD00B368AA /* Transformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transformation.swift; sourceTree = "<group>"; };
-		61245C072CCD2DBD00B368AA /* GetAllHeroesUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAllHeroesUseCase.swift; sourceTree = "<group>"; };
-		61245C082CCD2DBD00B368AA /* GetHeroUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHeroUseCase.swift; sourceTree = "<group>"; };
-		61245C092CCD2DBD00B368AA /* GetTransformationsUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetTransformationsUseCase.swift; sourceTree = "<group>"; };
+		61245C072CCD2DBD00B368AA /* HeroUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroUseCase.swift; sourceTree = "<group>"; };
+		61245C092CCD2DBD00B368AA /* HeroDetailUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailUseCase.swift; sourceTree = "<group>"; };
 		61245C0A2CCD2DBD00B368AA /* LoginUseCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCase.swift; sourceTree = "<group>"; };
 		61245C0D2CCD2DBD00B368AA /* AsyncImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		61245C0F2CCD2DBD00B368AA /* HeroDetailBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroDetailBuilder.swift; sourceTree = "<group>"; };
@@ -123,12 +114,6 @@
 		61245C232CCD2DBD00B368AA /* SplashView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashView.xib; sourceTree = "<group>"; };
 		61245C242CCD2DBD00B368AA /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
 		61245C252CCD2DBD00B368AA /* SplashViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewModel.swift; sourceTree = "<group>"; };
-		61245C272CCD2DBD00B368AA /* TransformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationTableViewCell.swift; sourceTree = "<group>"; };
-		61245C282CCD2DBD00B368AA /* TransformationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransformationTableViewCell.xib; sourceTree = "<group>"; };
-		61245C2B2CCD2DBD00B368AA /* TransformationsListBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationsListBuilder.swift; sourceTree = "<group>"; };
-		61245C2C2CCD2DBD00B368AA /* TransformationsListView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TransformationsListView.xib; sourceTree = "<group>"; };
-		61245C2D2CCD2DBD00B368AA /* TransformationsListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationsListViewController.swift; sourceTree = "<group>"; };
-		61245C2E2CCD2DBD00B368AA /* TransformationsListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransformationsListViewModel.swift; sourceTree = "<group>"; };
 		61245C302CCD2DBD00B368AA /* Binding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Binding.swift; sourceTree = "<group>"; };
 		61245C322CCD2DBD00B368AA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61245C332CCD2DBD00B368AA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -143,15 +128,15 @@
 		61245CC32CCD52B000B368AA /* SWPatternsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWPatternsTests.swift; sourceTree = "<group>"; };
 		61245CC92CCD52B300B368AA /* SWPatternsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWPatternsUITests.swift; sourceTree = "<group>"; };
 		61245CCA2CCD52B300B368AA /* SWPatternsUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SWPatternsUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		61245CDB2CCD684D00B368AA /* MOHero+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MOHero+CoreDataClass.swift"; sourceTree = "<group>"; };
-		61245CDC2CCD684D00B368AA /* MOHero+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MOHero+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		61245CDD2CCD684D00B368AA /* MOLocation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MOLocation+CoreDataClass.swift"; sourceTree = "<group>"; };
-		61245CDE2CCD684D00B368AA /* MOLocation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MOLocation+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		61245CDF2CCD684D00B368AA /* MOTransformation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MOTransformation+CoreDataClass.swift"; sourceTree = "<group>"; };
-		61245CE02CCD684D00B368AA /* MOTransformation+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MOTransformation+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		61245CE82CCD6BA700B368AA /* ApiHero.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiHero.swift; sourceTree = "<group>"; };
 		61245CEA2CCD6BFC00B368AA /* ApiTransformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiTransformation.swift; sourceTree = "<group>"; };
 		61245CEC2CCD6C6D00B368AA /* ApiLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiLocation.swift; sourceTree = "<group>"; };
+		61245CEE2CCD74C100B368AA /* SecureDataStoreProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureDataStoreProtocol.swift; sourceTree = "<group>"; };
+		61245CF32CCD865400B368AA /* StoreDataProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreDataProvider.swift; sourceTree = "<group>"; };
+		61245CF52CCD913E00B368AA /* GetHeroLocalizationsAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHeroLocalizationsAPIRequest.swift; sourceTree = "<group>"; };
+		61245CF72CCD97AE00B368AA /* MOHero+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MOHero+CoreDataClass.swift"; sourceTree = "<group>"; };
+		61245CF92CCD97AE00B368AA /* MOLocation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MOLocation+CoreDataClass.swift"; sourceTree = "<group>"; };
+		61245CFB2CCD97AE00B368AA /* MOTransformation+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MOTransformation+CoreDataClass.swift"; sourceTree = "<group>"; };
 		F84020152CAB22410051B4F7 /* IOSAdvanced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSAdvanced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F840202B2CAB22430051B4F7 /* IOSAdvancedTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSAdvancedTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F84020352CAB22430051B4F7 /* IOSAdvancedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSAdvancedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,6 +147,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				61245CF22CCD756A00B368AA /* KeychainSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,7 +171,7 @@
 		61245BF82CCD2DBD00B368AA /* DataSources */ = {
 			isa = PBXGroup;
 			children = (
-				61245BF72CCD2DBD00B368AA /* SessionDataSource.swift */,
+				61245CEE2CCD74C100B368AA /* SecureDataStoreProtocol.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -206,6 +192,7 @@
 			children = (
 				61245BFE2CCD2DBD00B368AA /* GetHeroesAPIRequest.swift */,
 				61245BFF2CCD2DBD00B368AA /* GetHeroTransformationsAPIRequest.swift */,
+				61245CF52CCD913E00B368AA /* GetHeroLocalizationsAPIRequest.swift */,
 				61245C002CCD2DBD00B368AA /* LoginAPIRequest.swift */,
 			);
 			path = Requests;
@@ -237,9 +224,8 @@
 		61245C0B2CCD2DBD00B368AA /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				61245C072CCD2DBD00B368AA /* GetAllHeroesUseCase.swift */,
-				61245C082CCD2DBD00B368AA /* GetHeroUseCase.swift */,
-				61245C092CCD2DBD00B368AA /* GetTransformationsUseCase.swift */,
+				61245C072CCD2DBD00B368AA /* HeroUseCase.swift */,
+				61245C092CCD2DBD00B368AA /* HeroDetailUseCase.swift */,
 				61245C0A2CCD2DBD00B368AA /* LoginUseCase.swift */,
 			);
 			path = UseCases;
@@ -324,35 +310,6 @@
 			path = Splash;
 			sourceTree = "<group>";
 		};
-		61245C292CCD2DBD00B368AA /* TransformationTableViewCell */ = {
-			isa = PBXGroup;
-			children = (
-				61245C272CCD2DBD00B368AA /* TransformationTableViewCell.swift */,
-				61245C282CCD2DBD00B368AA /* TransformationTableViewCell.xib */,
-			);
-			path = TransformationTableViewCell;
-			sourceTree = "<group>";
-		};
-		61245C2A2CCD2DBD00B368AA /* Cells */ = {
-			isa = PBXGroup;
-			children = (
-				61245C292CCD2DBD00B368AA /* TransformationTableViewCell */,
-			);
-			path = Cells;
-			sourceTree = "<group>";
-		};
-		61245C2F2CCD2DBD00B368AA /* TransformationsList */ = {
-			isa = PBXGroup;
-			children = (
-				61245C2A2CCD2DBD00B368AA /* Cells */,
-				61245C2B2CCD2DBD00B368AA /* TransformationsListBuilder.swift */,
-				61245C2C2CCD2DBD00B368AA /* TransformationsListView.xib */,
-				61245C2D2CCD2DBD00B368AA /* TransformationsListViewController.swift */,
-				61245C2E2CCD2DBD00B368AA /* TransformationsListViewModel.swift */,
-			);
-			path = TransformationsList;
-			sourceTree = "<group>";
-		};
 		61245C312CCD2DBD00B368AA /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,7 +318,6 @@
 				61245C1C2CCD2DBD00B368AA /* HeroesList */,
 				61245C212CCD2DBD00B368AA /* Login */,
 				61245C262CCD2DBD00B368AA /* Splash */,
-				61245C2F2CCD2DBD00B368AA /* TransformationsList */,
 				61245C302CCD2DBD00B368AA /* Binding.swift */,
 			);
 			path = Presentation;
@@ -429,13 +385,11 @@
 		61245CDA2CCD65C000B368AA /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				61245CF72CCD97AE00B368AA /* MOHero+CoreDataClass.swift */,
+				61245CF92CCD97AE00B368AA /* MOLocation+CoreDataClass.swift */,
+				61245CFB2CCD97AE00B368AA /* MOTransformation+CoreDataClass.swift */,
+				61245CF32CCD865400B368AA /* StoreDataProvider.swift */,
 				61245C682CCD2E7100B368AA /* Model.xcdatamodeld */,
-				61245CDB2CCD684D00B368AA /* MOHero+CoreDataClass.swift */,
-				61245CDC2CCD684D00B368AA /* MOHero+CoreDataProperties.swift */,
-				61245CDD2CCD684D00B368AA /* MOLocation+CoreDataClass.swift */,
-				61245CDE2CCD684D00B368AA /* MOLocation+CoreDataProperties.swift */,
-				61245CDF2CCD684D00B368AA /* MOTransformation+CoreDataClass.swift */,
-				61245CE02CCD684D00B368AA /* MOTransformation+CoreDataProperties.swift */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -487,6 +441,7 @@
 			);
 			name = IOSAdvanced;
 			packageProductDependencies = (
+				61245CF12CCD756A00B368AA /* KeychainSwift */,
 			);
 			productName = SWPatterns;
 			productReference = F84020152CAB22410051B4F7 /* IOSAdvanced.app */;
@@ -564,6 +519,9 @@
 			);
 			mainGroup = F840200C2CAB22410051B4F7;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				61245CF02CCD756A00B368AA /* XCRemoteSwiftPackageReference "keychain-swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = F84020162CAB22410051B4F7 /* Products */;
 			projectDirPath = "";
@@ -586,8 +544,6 @@
 				61245C3C2CCD2DBD00B368AA /* HeroesListView.xib in Resources */,
 				61245C3D2CCD2DBD00B368AA /* LoginView.xib in Resources */,
 				61245C3E2CCD2DBD00B368AA /* SplashView.xib in Resources */,
-				61245C3F2CCD2DBD00B368AA /* TransformationTableViewCell.xib in Resources */,
-				61245C402CCD2DBD00B368AA /* TransformationsListView.xib in Resources */,
 				61245C412CCD2DBD00B368AA /* Assets.xcassets in Resources */,
 				61245C432CCD2DBD00B368AA /* LaunchScreen.storyboard in Resources */,
 			);
@@ -614,7 +570,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				61245C442CCD2DBD00B368AA /* SessionDataSource.swift in Sources */,
 				61245C452CCD2DBD00B368AA /* APIErrorResponse.swift in Sources */,
 				61245CBD2CCD4FFE00B368AA /* Location.swift in Sources */,
 				61245C462CCD2DBD00B368AA /* APIInterceptor.swift in Sources */,
@@ -626,18 +581,13 @@
 				61245C4C2CCD2DBD00B368AA /* Credentials.swift in Sources */,
 				61245C4D2CCD2DBD00B368AA /* Hero.swift in Sources */,
 				61245C4E2CCD2DBD00B368AA /* Transformation.swift in Sources */,
-				61245CE12CCD684D00B368AA /* MOHero+CoreDataClass.swift in Sources */,
-				61245CE22CCD684D00B368AA /* MOHero+CoreDataProperties.swift in Sources */,
-				61245CE32CCD684D00B368AA /* MOLocation+CoreDataClass.swift in Sources */,
-				61245CE42CCD684D00B368AA /* MOLocation+CoreDataProperties.swift in Sources */,
-				61245CE52CCD684D00B368AA /* MOTransformation+CoreDataClass.swift in Sources */,
-				61245CE62CCD684D00B368AA /* MOTransformation+CoreDataProperties.swift in Sources */,
-				61245C4F2CCD2DBD00B368AA /* GetAllHeroesUseCase.swift in Sources */,
+				61245CF62CCD913E00B368AA /* GetHeroLocalizationsAPIRequest.swift in Sources */,
+				61245C4F2CCD2DBD00B368AA /* HeroUseCase.swift in Sources */,
 				61245CED2CCD6C6D00B368AA /* ApiLocation.swift in Sources */,
 				61245CEB2CCD6C0400B368AA /* ApiTransformation.swift in Sources */,
-				61245C502CCD2DBD00B368AA /* GetHeroUseCase.swift in Sources */,
-				61245C512CCD2DBD00B368AA /* GetTransformationsUseCase.swift in Sources */,
+				61245C512CCD2DBD00B368AA /* HeroDetailUseCase.swift in Sources */,
 				61245C522CCD2DBD00B368AA /* LoginUseCase.swift in Sources */,
+				61245CEF2CCD74C100B368AA /* SecureDataStoreProtocol.swift in Sources */,
 				61245C532CCD2DBD00B368AA /* AsyncImageView.swift in Sources */,
 				61245C542CCD2DBD00B368AA /* HeroDetailBuilder.swift in Sources */,
 				61245C552CCD2DBD00B368AA /* HeroDetailViewController.swift in Sources */,
@@ -654,11 +604,11 @@
 				61245C5E2CCD2DBD00B368AA /* SplashBuilder.swift in Sources */,
 				61245C5F2CCD2DBD00B368AA /* SplashViewController.swift in Sources */,
 				61245C602CCD2DBD00B368AA /* SplashViewModel.swift in Sources */,
-				61245C612CCD2DBD00B368AA /* TransformationTableViewCell.swift in Sources */,
-				61245C622CCD2DBD00B368AA /* TransformationsListBuilder.swift in Sources */,
-				61245C632CCD2DBD00B368AA /* TransformationsListViewController.swift in Sources */,
-				61245C642CCD2DBD00B368AA /* TransformationsListViewModel.swift in Sources */,
+				61245CFD2CCD97AE00B368AA /* MOHero+CoreDataClass.swift in Sources */,
+				61245CFF2CCD97AE00B368AA /* MOLocation+CoreDataClass.swift in Sources */,
+				61245D012CCD97AE00B368AA /* MOTransformation+CoreDataClass.swift in Sources */,
 				61245C652CCD2DBD00B368AA /* Binding.swift in Sources */,
+				61245CF42CCD865400B368AA /* StoreDataProvider.swift in Sources */,
 				61245C662CCD2DBD00B368AA /* AppDelegate.swift in Sources */,
 				61245C672CCD2DBD00B368AA /* SceneDelegate.swift in Sources */,
 			);
@@ -1024,6 +974,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		61245CF02CCD756A00B368AA /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 24.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		61245CF12CCD756A00B368AA /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 61245CF02CCD756A00B368AA /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		61245C682CCD2E7100B368AA /* Model.xcdatamodeld */ = {

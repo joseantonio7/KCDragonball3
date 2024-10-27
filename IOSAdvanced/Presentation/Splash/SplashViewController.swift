@@ -4,9 +4,11 @@ final class SplashViewController: UIViewController {
     @IBOutlet private weak var spinner: UIActivityIndicatorView!
     
     private let viewModel: SplashViewModel
+    private var nextScreen :UIViewController
     
     init(viewModel: SplashViewModel) {
         self.viewModel = viewModel
+        self.nextScreen = UIViewController()
         super.init(nibName: "SplashView", bundle: Bundle(for: type(of: self)))
     }
     
@@ -17,7 +19,18 @@ final class SplashViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         bind()
-        viewModel.load()
+        viewModel.load(build:{[ weak self] in
+            
+            //DESCOMENTAR PARA BORRAR TOKEN
+            //SecureDataStore.shared.deleteToken()
+            
+            
+            if SecureDataStore.shared.getToken() != nil {
+                self?.nextScreen = HeroesListBuilder().build()
+            } else {
+                self?.nextScreen = LoginBuilder().build()
+            }
+        })
     }
     
     private func bind() {
@@ -26,12 +39,16 @@ final class SplashViewController: UIViewController {
             case .loading:
                 self?.setAnimation(true)
             case .ready:
-                self?.setAnimation(false)
-                self?.present(LoginBuilder().build(), animated: true)
+                self?.ready()
             case .error:
                 break
             }
         }
+    }
+    
+    private func ready(){
+        setAnimation(false)
+        present(nextScreen, animated: true)
     }
     
     private func setAnimation(_ animating: Bool) {

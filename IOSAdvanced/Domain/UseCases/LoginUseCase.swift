@@ -5,9 +5,9 @@ protocol LoginUseCaseContract {
 }
 
 final class LoginUseCase: LoginUseCaseContract {
-    private let dataSource: SessionDataSourceContract
+    private let dataSource: SecureDataStore
     
-    init(dataSource: SessionDataSourceContract = SessionDataSource()) {
+    init(dataSource: SecureDataStore = SecureDataStore()) {
         self.dataSource = dataSource
     }
     
@@ -21,8 +21,9 @@ final class LoginUseCase: LoginUseCaseContract {
         LoginAPIRequest(credentials: credentials)
             .perform { [weak self] result in
                 switch result {
-                case .success(let token):
-                    self?.dataSource.storeSession(token)
+                case .success(let data):
+                    self?.dataSource.set(token: String(data: data, encoding: .utf8) ?? "")
+                    print(self?.dataSource.getToken() ?? "")
                     completion(.success(()))
                 case .failure:
                     completion(.failure(LoginUseCaseError(reason: "Network failed")))
