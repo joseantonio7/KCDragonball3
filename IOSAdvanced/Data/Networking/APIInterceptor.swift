@@ -18,7 +18,6 @@ final class AuthenticationRequestInterceptor: APIRequestInterceptor {
         guard let session = dataSource.getToken() else {
             return
         }
-        print(session)
         request.setValue("Bearer \(session)", forHTTPHeaderField: "Authorization")
     }
 }

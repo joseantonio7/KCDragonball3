@@ -65,7 +65,7 @@ class HeroDetailViewController: UIViewController {
         self.heroName.text = viewModel.hero.name
         self.heroDescription.text = viewModel.hero.description
         if (viewModel.transformations.count > 0){
-            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Transformaciones", style: .plain, target: self, action: #selector(logoutTapped))
+            navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Transformaciones", style: .plain, target: self, action: #selector(transformationList))
         }
     }
     
@@ -106,8 +106,8 @@ class HeroDetailViewController: UIViewController {
         }
     }
     
-    @objc func logoutTapped() {
-        let detailViewController = TransformationsListBuilder().build()
+    @objc func transformationList() {
+        let detailViewController = TransformationsListBuilder().build(id: viewModel.hero.identifier)
         navigationController?.pushViewController(detailViewController, animated: true)
     }
 }

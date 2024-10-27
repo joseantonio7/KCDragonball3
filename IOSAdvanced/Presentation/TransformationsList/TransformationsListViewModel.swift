@@ -18,21 +18,20 @@ final class TransformationsListViewModel {
     let onStateChanged = Binding<TransformationsListState>()
     private(set) var transformations: [Transformation] = []
     private let useCase: TransformationUseCaseProtocol
-    private var hero: Hero?
     
     init(useCase: TransformationUseCaseProtocol) {
         self.useCase = useCase
     }
     
-    func load() {
+    func load(id: String) {
         onStateChanged.update(newValue: .loading)
-        
-        useCase.loadTransformationsForHeroWith(id: hero?.identifier ?? "") { [weak self] result in
+        useCase.loadTransformationsForHeroWith(id: id) { [weak self] result in
             switch result {
             case .success(let transformations):
                 self?.transformations = transformations
                 self?.onStateChanged.update(newValue: .success)
             case .failure(let error):
+                print(error.localizedDescription)
                 self?.onStateChanged.update(newValue: .error(reason: error.localizedDescription))
             }
         }

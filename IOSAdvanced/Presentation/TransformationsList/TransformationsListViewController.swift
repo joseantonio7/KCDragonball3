@@ -16,9 +16,11 @@ final class TransformationsListViewController: UIViewController, UITableViewData
     @IBOutlet weak var spinner: UIActivityIndicatorView!
     
     private let viewModel: TransformationsListViewModel
+    private var id = ""
     
-    init(viewModel: TransformationsListViewModel) {
+    init(viewModel: TransformationsListViewModel, id: String) {
         self.viewModel = viewModel
+        self.id = id
         super.init(nibName: "TransformationsListView", bundle: Bundle(for: type(of: self)))
     }
     
@@ -34,7 +36,7 @@ final class TransformationsListViewController: UIViewController, UITableViewData
         tableView.register(TransformationTableViewCell.nib, forCellReuseIdentifier: TransformationTableViewCell.reuseIdentifier)
         
         bind()
-        viewModel.load()
+        viewModel.load(id: id)
     }
     
     // MARK: - States
@@ -96,8 +98,5 @@ final class TransformationsListViewController: UIViewController, UITableViewData
 //        navigationController?.pushViewController(detailViewController, animated: true)
     }
 
-}
-#Preview {
-    TransformationsListBuilder().build()
 }
 

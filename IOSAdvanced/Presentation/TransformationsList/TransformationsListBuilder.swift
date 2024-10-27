@@ -9,10 +9,10 @@
 import UIKit
 
 final class TransformationsListBuilder {
-    func build() -> UIViewController {
+    func build(id: String) -> UIViewController {
         let useCase = TransformationListUseCase(storeDataProvider: StoreDataProvider.shared)
         let viewModel = TransformationsListViewModel(useCase: useCase)
-        let viewController = TransformationsListViewController(viewModel: viewModel)
+        let viewController = TransformationsListViewController(viewModel: viewModel, id: id)
         
         return viewController
     }

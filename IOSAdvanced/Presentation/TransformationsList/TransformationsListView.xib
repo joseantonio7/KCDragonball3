@@ -14,6 +14,7 @@
                 <outlet property="errorLabel" destination="D6l-qP-esN" id="uaa-UZ-bDh"/>
                 <outlet property="spinner" destination="dwy-Ny-iS6" id="Zeq-ID-oGG"/>
                 <outlet property="tableView" destination="WY4-v5-RzE" id="Xe3-n8-ULc"/>
+                <outlet property="view" destination="iN0-l3-epB" id="Fgr-p2-vzs"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -28,7 +29,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="Pdb-dC-QCe">
                     <rect key="frame" x="159" y="398.66666666666669" width="75" height="54.666666666666686"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6l-qP-esN">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="wordWrap" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D6l-qP-esN">
                             <rect key="frame" x="0.0" y="0.0" width="75" height="20.333333333333332"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <nil key="textColor"/>

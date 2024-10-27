@@ -23,7 +23,6 @@ final class LoginUseCase: LoginUseCaseContract {
                 switch result {
                 case .success(let data):
                     self?.dataSource.set(token: String(data: data, encoding: .utf8) ?? "")
-                    print(self?.dataSource.getToken() ?? "")
                     completion(.success(()))
                 case .failure:
                     completion(.failure(LoginUseCaseError(reason: "Network failed")))
