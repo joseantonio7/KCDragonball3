@@ -173,6 +173,7 @@
 		61245E232CCE728C00B368AA /* HeroesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesUseCaseTests.swift; sourceTree = "<group>"; };
 		619C9B4B2CD2853D00FD0A67 /* LoginUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCaseTests.swift; sourceTree = "<group>"; };
 		619C9B512CD28CE300FD0A67 /* SecureDataStoreMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureDataStoreMock.swift; sourceTree = "<group>"; };
+		619C9B532CD2B99100FD0A67 /* IOSAdvanced.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = IOSAdvanced.xctestplan; sourceTree = "<group>"; };
 		F84020152CAB22410051B4F7 /* IOSAdvanced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSAdvanced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F84020352CAB22430051B4F7 /* IOSAdvancedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSAdvancedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -492,6 +493,7 @@
 		F840200C2CAB22410051B4F7 = {
 			isa = PBXGroup;
 			children = (
+				619C9B532CD2B99100FD0A67 /* IOSAdvanced.xctestplan */,
 				61245C392CCD2DBD00B368AA /* IOSAdvanced */,
 				61245E102CCE6F6000B368AA /* IOSAdvancedTests */,
 				61245CCB2CCD52B300B368AA /* IOSAdvancedUITests */,
@@ -773,6 +775,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D7787Q7KPV;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jose.aravena.keepcodingXVIII.IOSAdvancedTests;
@@ -792,6 +795,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = D7787Q7KPV;
 				GENERATE_INFOPLIST_FILE = YES;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.jose.aravena.keepcodingXVIII.IOSAdvancedTests;
@@ -810,7 +814,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AJPM5QDVLY;
+				DEVELOPMENT_TEAM = D7787Q7KPV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "IOSAdvanced/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -842,7 +846,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AJPM5QDVLY;
+				DEVELOPMENT_TEAM = D7787Q7KPV;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "IOSAdvanced/Supporting Files/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -991,11 +995,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AJPM5QDVLY;
+				DEVELOPMENT_TEAM = D7787Q7KPV;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.albgarciam.SWPatternsUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Aravena.JoseAntonio.IOSAdvanced;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
@@ -1013,11 +1017,11 @@
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = AJPM5QDVLY;
+				DEVELOPMENT_TEAM = D7787Q7KPV;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.albgarciam.SWPatternsUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.Aravena.JoseAntonio.IOSAdvanced;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;

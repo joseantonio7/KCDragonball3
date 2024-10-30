@@ -1,0 +1,37 @@
+{
+  "configurations" : [
+    {
+      "id" : "92E2BDF1-ADAD-461F-BCE2-40BB5BE63C7D",
+      "name" : "Test Scheme Action",
+      "options" : {
+
+      }
+    }
+  ],
+  "defaultOptions" : {
+    "targetForVariableExpansion" : {
+      "containerPath" : "container:IOSAdvanced.xcodeproj",
+      "identifier" : "F84020142CAB22410051B4F7",
+      "name" : "IOSAdvanced"
+    }
+  },
+  "testTargets" : [
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:IOSAdvanced.xcodeproj",
+        "identifier" : "61245E062CCE6F5200B368AA",
+        "name" : "IOSAdvancedTests"
+      }
+    },
+    {
+      "parallelizable" : true,
+      "target" : {
+        "containerPath" : "container:IOSAdvanced.xcodeproj",
+        "identifier" : "F84020342CAB22430051B4F7",
+        "name" : "IOSAdvancedUITests"
+      }
+    }
+  ],
+  "version" : 1
+}
