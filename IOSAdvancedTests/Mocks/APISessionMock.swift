@@ -1,18 +1,24 @@
+//
+//  APISessionContract.swift
+//  IOSAdvanced
+//
+//  Created by José Antonio Aravena on 30-10-24.
+//
+
 import Foundation
+@testable import IOSAdvanced
 
-protocol APISessionContract {
-    func request<Request: APIRequest >(apiRequest: Request, completion: @escaping (Result<Data, Error>) -> Void)
-}
-
-struct APISession: APISessionContract {
+struct APISessionMock: APISessionContract {
     static var shared: APISessionContract = APISession()
     
     private let session: URLSession
     private let requestInterceptors: [APIRequestInterceptor]
     
-    init(urlsession: URLSession = URLSession(configuration: .default), requestInterceptors: [APIRequestInterceptor] = [AuthenticationRequestInterceptor()]) {
+    init(requestInterceptors: [APIRequestInterceptor] = [AuthenticationRequestInterceptor(dataSource: SecureDataStorageMock())] ) {
         self.requestInterceptors = requestInterceptors
-        self.session = urlsession
+        let configuration = URLSessionConfiguration.ephemeral
+        configuration.protocolClasses = [URLProtocolMock.self]
+        self.session = URLSession(configuration: configuration)
         
     }
     
@@ -30,7 +36,7 @@ struct APISession: APISessionContract {
                     return completion(.failure(APIErrorResponse.network(apiRequest.path, code: 0)))
                 }
                 if httpResponse.statusCode != 200 {
-                    return completion(.failure(APIErrorResponse.init(url: "", statusCode: httpResponse.statusCode, message: "\(httpResponse.statusCode)")))
+                    return completion(.failure(APIErrorResponse.network(apiRequest.path, code: httpResponse.statusCode)))
                 }
                 return completion(.success(data ?? Data()))
             }.resume()

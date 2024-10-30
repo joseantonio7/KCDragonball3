@@ -1,14 +1,6 @@
-//
-//  Untitled.swift
-//  IOSAdvanced
-//
-//  Created by José Antonio Aravena on 27-10-24.
-//
-
 import Foundation
 
 class URLProtocolMock: URLProtocol {
-
     static var error: Error?
     static var handler: ((URLRequest) throws -> (Data, HTTPURLResponse))?
     
@@ -25,7 +17,6 @@ class URLProtocolMock: URLProtocol {
             client?.urlProtocol(self, didFailWithError: error)
             return
         }
-
         guard let handler = Self.handler else {
             fatalError("No Error or handler provided")
         }

@@ -15,8 +15,8 @@ struct APIErrorResponse: Error, Equatable {
 }
 
 extension APIErrorResponse {
-    static func network(_ url: String) -> APIErrorResponse {
-        APIErrorResponse(url: url, statusCode: -1, message: "Network connection error")
+    static func network(_ url: String, code:Int) -> APIErrorResponse {
+        APIErrorResponse(url: url, statusCode: -1, message: "Network connection error \(code)")
     }
     
     static func parseData(_ url: String) -> APIErrorResponse {

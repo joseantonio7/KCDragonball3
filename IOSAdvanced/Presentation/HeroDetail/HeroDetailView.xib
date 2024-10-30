@@ -12,7 +12,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HeroDetailViewController" customModule="IOSAdvanced" customModuleProvider="target">
             <connections>
                 <outlet property="container" destination="UZe-B0-yqN" id="38Z-ve-Pew"/>
-                <outlet property="heroDescription" destination="uZd-wH-8u8" id="O1R-so-FD2"/>
+                <outlet property="heroDescription" destination="6vN-VE-01E" id="rw7-Pe-72b"/>
                 <outlet property="heroName" destination="wSN-EL-OU7" id="R68-Mf-cFQ"/>
                 <outlet property="mapView" destination="uMX-9x-7lq" id="ak4-CJ-aXX"/>
                 <outlet property="spinner" destination="SXp-og-aLW" id="suR-zp-Sgq"/>
@@ -31,21 +31,26 @@
                     <rect key="frame" x="16" y="59" width="361" height="759"/>
                     <subviews>
                         <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uMX-9x-7lq">
-                            <rect key="frame" x="0.0" y="0.0" width="361" height="718.33333333333337"/>
+                            <rect key="frame" x="0.0" y="0.0" width="361" height="338.66666666666669"/>
                             <standardMapConfiguration key="preferredConfiguration"/>
                         </mapView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wSN-EL-OU7" userLabel="title">
-                            <rect key="frame" x="0.0" y="718.33333333333337" width="361" height="20.333333333333371"/>
+                            <rect key="frame" x="0.0" y="338.66666666666669" width="361" height="20.333333333333314"/>
                             <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uZd-wH-8u8" userLabel="Description">
-                            <rect key="frame" x="0.0" y="738.66666666666663" width="361" height="20.333333333333371"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="6vN-VE-01E">
+                            <rect key="frame" x="0.0" y="359" width="361" height="400"/>
+                            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="400" id="5Dw-gN-dbf"/>
+                            </constraints>
+                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                            <color key="textColor" systemColor="labelColor"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                        </textView>
                     </subviews>
                 </stackView>
             </subviews>
@@ -63,6 +68,9 @@
         </view>
     </objects>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

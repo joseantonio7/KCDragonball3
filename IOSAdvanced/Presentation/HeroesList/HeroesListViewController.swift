@@ -95,7 +95,11 @@ final class HeroesListViewController: UIViewController, UITableViewDataSource, U
     @objc func logoutTapped(){
         SecureDataStore.shared.deleteToken()
         StoreDataProvider.shared.clearBBDD()
-        present(LoginBuilder().build(), animated: true)
+        if let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+           let window = windowScene.windows.first {
+            window.rootViewController = LoginBuilder().build()
+            window.makeKeyAndVisible()
+        }
     }
 
 }

@@ -17,12 +17,14 @@ final class HeroesUseCaseTests: XCTestCase {
     override func setUpWithError() throws {
         try super.setUpWithError()
         storeDataProvider = StoreDataProvider(persistency: .inMemory)
-        sut = HeroUseCase(apiProvider: GetHeroesAPIRequestMock(), storeDataPRovider: storeDataProvider)
+        sut = HeroUseCase(apisession: APISessionMock(), apiProvider: GetHeroesAPIRequest(name: ""), storeDataProvider: storeDataProvider)
+
     }
 
     override func tearDownWithError() throws {
         storeDataProvider = nil
         sut = nil
+        URLProtocolMock.handler = nil
         try super.tearDownWithError()
     }
     
@@ -30,6 +32,13 @@ final class HeroesUseCaseTests: XCTestCase {
         //Given
         let expectedHeroees = try? MockData.mockHeroes()
         var receivedHeroes: [Hero]?
+        
+        URLProtocolMock.handler = { request in
+            let expectedUrl = try XCTUnwrap(URL(string: "https://dragonball.keepcoding.education/api/heros/all"))
+            let data = try MockData.loadHeroesData()
+            let response = HTTPURLResponse(url: expectedUrl, statusCode: 200, httpVersion: nil, headerFields: nil)!
+           return  (data, response)
+        }
         
         //When
         let expectation = expectation(description: "Load heroes")
@@ -39,12 +48,12 @@ final class HeroesUseCaseTests: XCTestCase {
                 receivedHeroes = heroes
                 expectation.fulfill()
             case .failure(_):
-                XCTFail("Expected succes")
+                XCTFail("Expected success")
             }
         }
         
         //Then
-        wait(for: [expectation], timeout: 1)
+        wait(for: [expectation], timeout: 7)
         XCTAssertNotNil(receivedHeroes)
         XCTAssertEqual(receivedHeroes?.count, expectedHeroees?.count)
         let bdHeroes = storeDataProvider.fetchHeroes(filter: nil)
@@ -53,8 +62,8 @@ final class HeroesUseCaseTests: XCTestCase {
     
     func test_LoadHeroes_Error_ShouldREturnError() {
         //Given
-        sut = HeroUseCase(apiProvider: ApiProviderErrorMock(), storeDataPRovider: storeDataProvider)
         var error: APIErrorResponse?
+        URLProtocolMock.error = NSError(domain: "ios.Keepcoding", code: 503)
         
         //When
         let expectation = expectation(description: "Load heroes return error")
@@ -71,14 +80,21 @@ final class HeroesUseCaseTests: XCTestCase {
         //Then
         wait(for: [expectation], timeout: 1)
         XCTAssertNotNil(error)
-        XCTAssertEqual(error?.description, "Data no received from server")
+        XCTAssertEqual(error?.message, "Unknown error")
     }
     
     func test_LoadHeroes_SuldReturn_DataFiltered() {
-        // Gicen
+        // Given
         let expectedHeros = 3
         let predicate = NSPredicate(format: "name CONTAINS[cd] %@", "g")
         var receivedHeroes: [Hero]?
+        
+        URLProtocolMock.handler = { request in
+            let expectedUrl = try XCTUnwrap(URL(string: "https://dragonball.keepcoding.education/api/heros/all"))
+            let data = try MockData.loadHeroesData()
+            let response = HTTPURLResponse(url: expectedUrl, statusCode: 200, httpVersion: nil, headerFields: nil)!
+           return  (data, response)
+        }
         
         // When
         let expectation = expectation(description: "Load heroes filtered with 'g' in his name")
@@ -93,7 +109,7 @@ final class HeroesUseCaseTests: XCTestCase {
         }
         
         //Then
-        wait(for: [expectation], timeout: 0.1)
+        wait(for: [expectation], timeout: 3)
         XCTAssertEqual(receivedHeroes?.count, expectedHeros)
     }
 }

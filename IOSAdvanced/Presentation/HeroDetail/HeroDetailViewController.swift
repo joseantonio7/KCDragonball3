@@ -5,9 +5,9 @@ class HeroDetailViewController: UIViewController {
 
     private let viewModel: HeroDetailViewModel
     
-    @IBOutlet weak var heroDescription: UILabel!
     @IBOutlet weak var heroName: UILabel!
     
+    @IBOutlet weak var heroDescription: UITextView!
     @IBOutlet weak var mapView: MKMapView!
     @IBOutlet weak var container: UIStackView!
     @IBOutlet weak var spinner: UIActivityIndicatorView!

@@ -93,7 +93,7 @@ final class TransformationsListViewController: UIViewController, UITableViewData
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let transformation = viewModel.transformations[indexPath.row]
     
-        let detailViewController = TransformationDetailBuilder().build(id: transformation.identifier)
+        let detailViewController = TransformationDetailBuilder().build(transformation: transformation)
         navigationController?.pushViewController(detailViewController, animated: true)
     }
 

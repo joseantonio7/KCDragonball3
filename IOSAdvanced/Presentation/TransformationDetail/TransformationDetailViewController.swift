@@ -16,57 +16,28 @@ class TransformationDetailViewController: UIViewController {
     @IBOutlet weak var container: UIStackView!
     
     @IBOutlet weak var spinner: UIActivityIndicatorView!
-    var id:String = ""
+    var transformation: Transformation?
     override func viewDidLoad() {
         super.viewDidLoad()
-        bind()
-        viewModel?.load(id: id)
+        render()
     }
-    private var viewModel: TransformationDetailViewModel?
-    init(viewModel: TransformationDetailViewModel, id: String) {
+    init(transformation: Transformation) {
         super.init(nibName: "TransformationDetailView", bundle: Bundle(for: type(of: self)))
-        self.viewModel = viewModel
-        self.id = id
+        self.transformation = transformation
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    // MARK: - States
-    private func bind() {
-        viewModel?.onStateChanged.bind { [weak self] state in
-            switch state {
-            case .loading:
-                self?.renderLoading()
-            case .success:
-                self?.renderSuccess()
-            case .error(let error):
-                self?.renderError(error)
-            }
-        }
-    }
     
-    private func renderError(_ reason: String) {
-        spinner.stopAnimating()
-        container.isHidden = true
-        let alert = UIAlertController(title: "G & F", message: reason, preferredStyle: .alert)
-        alert.addAction(UIAlertAction(title: "OK", style: .default))
-        self.present(alert, animated: true)
-    }
-    
-    private func renderLoading() {
-        spinner.startAnimating()
-        container.isHidden = true
-    }
-    
-    private func renderSuccess() {
+    private func render() {
         spinner.stopAnimating()
         container.isHidden = false
         let options = KingfisherOptionsInfo([.transition(.fade(0.3)), .forceTransition])
-        imageView.kf.setImage(with: URL(string: viewModel?.transformation?.photo ?? ""), options: options)
+        imageView.kf.setImage(with: URL(string: transformation?.photo ?? ""), options: options)
         
-        self.titleLabel.text = viewModel?.transformation?.name
-        self.descriptionLabel.text = viewModel?.transformation?.description
+        self.titleLabel.text = transformation?.name
+        self.descriptionLabel.text = transformation?.description
     }
     
     

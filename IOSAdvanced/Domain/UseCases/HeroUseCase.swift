@@ -8,16 +8,18 @@ class HeroUseCase: HeroUseCaseProtocol {
     
     private var apiProvider: GetHeroesAPIRequest
     private var storeDataProvider: StoreDataProvider
+    private var apisession: APISessionContract
     
-    init(apiProvider: GetHeroesAPIRequest = GetHeroesAPIRequest(name: ""), storeDataProvider: StoreDataProvider = .shared) {
+    init(apisession: APISessionContract, apiProvider: GetHeroesAPIRequest = GetHeroesAPIRequest(name: ""), storeDataProvider: StoreDataProvider = .shared) {
         self.apiProvider = apiProvider
         self.storeDataProvider = storeDataProvider
+        self.apisession = apisession
     }
 
     func loadHeros(filter: NSPredicate? = nil, completion: @escaping ((Result<[Hero], APIErrorResponse>) -> Void  )) {
         let localHeroes = storeDataProvider.fetchHeroes(filter: filter)
         if localHeroes.isEmpty {
-            apiProvider.perform(session: APISession(), completion: { [weak self] result in
+            apiProvider.perform(session: apisession, completion: { [weak self] result in
                 switch result {
                 case .success(let apiHeros):
                     DispatchQueue.main.async {

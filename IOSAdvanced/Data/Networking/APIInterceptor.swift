@@ -8,9 +8,9 @@ protocol APIRequestInterceptor: APIInterceptor {
 
 
 final class AuthenticationRequestInterceptor: APIRequestInterceptor {
-    private let dataSource: SecureDataStore
+    private let dataSource: SecureDataStoreProtocol
     
-    init(dataSource: SecureDataStore = SecureDataStore()) {
+    init(dataSource: SecureDataStoreProtocol = SecureDataStore()) {
         self.dataSource = dataSource
     }
     

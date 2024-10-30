@@ -9,10 +9,8 @@
 import UIKit
 
 final class TransformationDetailBuilder {
-    func build(id: String) -> UIViewController {
-        let useCase = TransformationDetailUseCase()
-        let viewModel = TransformationDetailViewModel(useCase: useCase)
-        let viewController = TransformationDetailViewController(viewModel: viewModel, id: id)
+    func build(transformation: Transformation) -> UIViewController {
+        let viewController = TransformationDetailViewController(transformation: transformation)
         
         return viewController
     }

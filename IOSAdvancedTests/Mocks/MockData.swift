@@ -18,6 +18,10 @@ class MockData {
         }
         return data
     }
+    
+    static func loadNoData() throws -> Data {
+        return Data()
+    }
 
     static func mockHeroes() throws -> [ApiHero] {
         do {
