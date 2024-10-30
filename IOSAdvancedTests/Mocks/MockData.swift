@@ -22,6 +22,10 @@ class MockData {
     static func loadNoData() throws -> Data {
         return Data()
     }
+    
+    static func login() throws -> Data {
+        return "eyJraWQiOiJwcml2YXRlIiwiYWxnIjoiSFMyNTYiLCJ0eXAiOiJKV1QifQ.eyJpZGVudGlmeSI6IjdBQjhBQzRELUFEOEYtNEFDRS1BQTQ1LTIxRTg0QUU4QkJFNyIsImVtYWlsIjoiYmVqbEBrZWVwY29kaW5nLmVzIiwiZXhwaXJhdGlvbiI6NjQwOTIyMTEyMDB9.Dxxy91hTVz3RTF7w1YVTJ7O9g71odRcqgD00gspm30s".data(using: .utf8)!
+    }
 
     static func mockHeroes() throws -> [ApiHero] {
         do {

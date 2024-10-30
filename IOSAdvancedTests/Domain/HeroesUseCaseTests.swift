@@ -65,7 +65,6 @@ final class HeroesUseCaseTests: XCTestCase {
     func test_LoadHeroes_Error_ShouldREturnError() {
         //Given
         var error: APIErrorResponse?
-        //URLProtocolMock.error = NSError(domain: "ios.Keepcoding", code: 503)
         URLProtocolMock.handler = { result in
             let expectedUrl = try XCTUnwrap(URL(string: "https://dragonball.keepcoding.education/api/heros/all"))
             let data = try MockData.loadHeroesData()

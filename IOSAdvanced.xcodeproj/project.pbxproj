@@ -78,7 +78,8 @@
 		61245E1E2CCE719A00B368AA /* StoreProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245E1D2CCE719A00B368AA /* StoreProviderTests.swift */; };
 		61245E202CCE71E000B368AA /* ApiProviderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245E1F2CCE71E000B368AA /* ApiProviderTests.swift */; };
 		61245E242CCE728C00B368AA /* HeroesUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245E232CCE728C00B368AA /* HeroesUseCaseTests.swift */; };
-		61245E272CCE72C000B368AA /* HeroesViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61245E262CCE72C000B368AA /* HeroesViewModelTests.swift */; };
+		619C9B4C2CD2853D00FD0A67 /* LoginUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619C9B4B2CD2853D00FD0A67 /* LoginUseCaseTests.swift */; };
+		619C9B522CD28CE300FD0A67 /* SecureDataStoreMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 619C9B512CD28CE300FD0A67 /* SecureDataStoreMock.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,7 +171,8 @@
 		61245E1D2CCE719A00B368AA /* StoreProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoreProviderTests.swift; sourceTree = "<group>"; };
 		61245E1F2CCE71E000B368AA /* ApiProviderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiProviderTests.swift; sourceTree = "<group>"; };
 		61245E232CCE728C00B368AA /* HeroesUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesUseCaseTests.swift; sourceTree = "<group>"; };
-		61245E262CCE72C000B368AA /* HeroesViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesViewModelTests.swift; sourceTree = "<group>"; };
+		619C9B4B2CD2853D00FD0A67 /* LoginUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginUseCaseTests.swift; sourceTree = "<group>"; };
+		619C9B512CD28CE300FD0A67 /* SecureDataStoreMock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureDataStoreMock.swift; sourceTree = "<group>"; };
 		F84020152CAB22410051B4F7 /* IOSAdvanced.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IOSAdvanced.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F84020352CAB22430051B4F7 /* IOSAdvancedUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IOSAdvancedUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -452,7 +454,6 @@
 				61245E132CCE703A00B368AA /* Mocks */,
 				61245E1C2CCE717D00B368AA /* Data */,
 				61245E212CCE721D00B368AA /* Domain */,
-				61245E252CCE72B000B368AA /* Presentation */,
 			);
 			path = IOSAdvancedTests;
 			sourceTree = "<group>";
@@ -460,6 +461,7 @@
 		61245E132CCE703A00B368AA /* Mocks */ = {
 			isa = PBXGroup;
 			children = (
+				619C9B512CD28CE300FD0A67 /* SecureDataStoreMock.swift */,
 				61245E1A2CCE715A00B368AA /* Heroes.json */,
 				61245E112CCE6FD800B368AA /* MockData.swift */,
 				61245E162CCE70BC00B368AA /* SecureDataStorageMock.swift */,
@@ -482,16 +484,9 @@
 			isa = PBXGroup;
 			children = (
 				61245E232CCE728C00B368AA /* HeroesUseCaseTests.swift */,
+				619C9B4B2CD2853D00FD0A67 /* LoginUseCaseTests.swift */,
 			);
 			path = Domain;
-			sourceTree = "<group>";
-		};
-		61245E252CCE72B000B368AA /* Presentation */ = {
-			isa = PBXGroup;
-			children = (
-				61245E262CCE72C000B368AA /* HeroesViewModelTests.swift */,
-			);
-			path = Presentation;
 			sourceTree = "<group>";
 		};
 		F840200C2CAB22410051B4F7 = {
@@ -668,11 +663,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				61245E122CCE6FD800B368AA /* MockData.swift in Sources */,
-				61245E272CCE72C000B368AA /* HeroesViewModelTests.swift in Sources */,
+				619C9B4C2CD2853D00FD0A67 /* LoginUseCaseTests.swift in Sources */,
 				61245E172CCE70BC00B368AA /* SecureDataStorageMock.swift in Sources */,
 				61245E242CCE728C00B368AA /* HeroesUseCaseTests.swift in Sources */,
 				61245E1E2CCE719A00B368AA /* StoreProviderTests.swift in Sources */,
 				61245E202CCE71E000B368AA /* ApiProviderTests.swift in Sources */,
+				619C9B522CD28CE300FD0A67 /* SecureDataStoreMock.swift in Sources */,
 				611D5D332CD2412A006842BA /* APISessionMock.swift in Sources */,
 				611D5D352CD24660006842BA /* URLProtocolMock.swift in Sources */,
 			);

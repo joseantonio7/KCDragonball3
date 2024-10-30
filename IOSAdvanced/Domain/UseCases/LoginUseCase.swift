@@ -2,13 +2,17 @@ import Foundation
 
 protocol LoginUseCaseContract {
     func execute(credentials: Credentials, completion: @escaping (Result<Void, LoginUseCaseError>) -> Void)
+    func validateUsername(_ username: String) -> Bool
+    func validatePassword(_ password: String) -> Bool
 }
 
 final class LoginUseCase: LoginUseCaseContract {
-    private let dataSource: SecureDataStore
+    private let dataSource: SecureDataStoreProtocol
+    private let apisession:APISessionContract
     
-    init(dataSource: SecureDataStore = SecureDataStore()) {
+    init(apisession: APISessionContract = APISession.shared, dataSource: SecureDataStoreProtocol = SecureDataStore()) {
         self.dataSource = dataSource
+        self.apisession = apisession
     }
     
     func execute(credentials: Credentials, completion: @escaping (Result<Void, LoginUseCaseError>) -> Void) {
@@ -19,7 +23,7 @@ final class LoginUseCase: LoginUseCaseContract {
             return completion(.failure(LoginUseCaseError(reason: "Invalid password")))
         }
         LoginAPIRequest(credentials: credentials)
-            .perform { [weak self] result in
+            .perform (session: apisession, completion: { [weak self] result in
                 switch result {
                 case .success(let data):
                     self?.dataSource.set(token: String(data: data, encoding: .utf8) ?? "")
@@ -27,14 +31,14 @@ final class LoginUseCase: LoginUseCaseContract {
                 case .failure:
                     completion(.failure(LoginUseCaseError(reason: "Network failed")))
                 }
-            }
+            })
     }
     
-    private func validateUsername(_ username: String) -> Bool {
+    func validateUsername(_ username: String) -> Bool {
         username.contains("@") && !username.isEmpty
     }
     
-    private func validatePassword(_ password: String) -> Bool {
+    func validatePassword(_ password: String) -> Bool {
         password.count >= 4
     }
 }
