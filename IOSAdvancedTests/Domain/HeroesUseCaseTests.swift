@@ -13,11 +13,13 @@ final class HeroesUseCaseTests: XCTestCase {
     
     var sut: HeroUseCase!
     var storeDataProvider: StoreDataProvider!
+    var session: APISessionContract!
     
     override func setUpWithError() throws {
         try super.setUpWithError()
         storeDataProvider = StoreDataProvider(persistency: .inMemory)
-        sut = HeroUseCase(apisession: APISessionMock(), apiProvider: GetHeroesAPIRequest(name: ""), storeDataProvider: storeDataProvider)
+        session = APISessionMock()
+        sut = HeroUseCase(apisession: session, apiProvider: GetHeroesAPIRequest(name: ""), storeDataProvider: storeDataProvider)
 
     }
 
@@ -53,7 +55,7 @@ final class HeroesUseCaseTests: XCTestCase {
         }
         
         //Then
-        wait(for: [expectation], timeout: 7)
+        wait(for: [expectation], timeout: 2)
         XCTAssertNotNil(receivedHeroes)
         XCTAssertEqual(receivedHeroes?.count, expectedHeroees?.count)
         let bdHeroes = storeDataProvider.fetchHeroes(filter: nil)
@@ -63,7 +65,13 @@ final class HeroesUseCaseTests: XCTestCase {
     func test_LoadHeroes_Error_ShouldREturnError() {
         //Given
         var error: APIErrorResponse?
-        URLProtocolMock.error = NSError(domain: "ios.Keepcoding", code: 503)
+        //URLProtocolMock.error = NSError(domain: "ios.Keepcoding", code: 503)
+        URLProtocolMock.handler = { result in
+            let expectedUrl = try XCTUnwrap(URL(string: "https://dragonball.keepcoding.education/api/heros/all"))
+            let data = try MockData.loadHeroesData()
+            let response = HTTPURLResponse(url: expectedUrl, statusCode: 500, httpVersion: nil, headerFields: nil)!
+           return  (data, response)
+        }
         
         //When
         let expectation = expectation(description: "Load heroes return error")
@@ -80,7 +88,7 @@ final class HeroesUseCaseTests: XCTestCase {
         //Then
         wait(for: [expectation], timeout: 1)
         XCTAssertNotNil(error)
-        XCTAssertEqual(error?.message, "Unknown error")
+        XCTAssertEqual(error?.message, "Network connection error 500")
     }
     
     func test_LoadHeroes_SuldReturn_DataFiltered() {

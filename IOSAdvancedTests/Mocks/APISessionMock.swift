@@ -14,7 +14,7 @@ struct APISessionMock: APISessionContract {
     private let session: URLSession
     private let requestInterceptors: [APIRequestInterceptor]
     
-    init(requestInterceptors: [APIRequestInterceptor] = [AuthenticationRequestInterceptor(dataSource: SecureDataStorageMock())] ) {
+    init(handler:((URLRequest) throws -> (Data, HTTPURLResponse))? = nil, requestInterceptors: [APIRequestInterceptor] = [AuthenticationRequestInterceptor(dataSource: SecureDataStorageMock())] ) {
         self.requestInterceptors = requestInterceptors
         let configuration = URLSessionConfiguration.ephemeral
         configuration.protocolClasses = [URLProtocolMock.self]
