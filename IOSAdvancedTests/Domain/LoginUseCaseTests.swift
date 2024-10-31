@@ -16,7 +16,7 @@ final class LoginUseCaseTests: XCTestCase {
         session = APISessionMock()
         secureDataStore = SecureDataStoreMock()
         sut = LoginUseCase(apisession: session, dataSource: secureDataStore)
-
+        URLProtocolMock.error = nil
     }
 
     override func tearDownWithError() throws {

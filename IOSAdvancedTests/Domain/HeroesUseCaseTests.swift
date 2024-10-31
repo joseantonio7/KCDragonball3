@@ -20,7 +20,7 @@ final class HeroesUseCaseTests: XCTestCase {
         storeDataProvider = StoreDataProvider(persistency: .inMemory)
         session = APISessionMock()
         sut = HeroUseCase(apisession: session, apiProvider: GetHeroesAPIRequest(name: ""), storeDataProvider: storeDataProvider)
-
+        URLProtocolMock.error = nil
     }
 
     override func tearDownWithError() throws {
