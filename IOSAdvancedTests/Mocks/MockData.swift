@@ -36,4 +36,42 @@ class MockData {
             throw error
         }
     }
+    
+    static func loadTransformationData() throws -> Data {
+        let bundle = Bundle(for: MockData.self)
+        guard let url = bundle.url(forResource: "Transformations", withExtension: "json"),
+              let data = try? Data.init(contentsOf: url)  else {
+            throw NSError(domain: "io.keepcoding.GokuandFriends", code: -1)
+        }
+        return data
+    }
+    
+    static func mockTransformations() throws -> [ApiTransformation] {
+        do {
+            let data = try self.loadTransformationData()
+            let transformations = try JSONDecoder().decode([ApiTransformation].self, from: data)
+            return transformations
+        } catch {
+            throw error
+        }
+    }
+    
+    static func loadLocationData() throws -> Data {
+        let bundle = Bundle(for: MockData.self)
+        guard let url = bundle.url(forResource: "Locations", withExtension: "json"),
+              let data = try? Data.init(contentsOf: url)  else {
+            throw NSError(domain: "io.keepcoding.GokuandFriends", code: -1)
+        }
+        return data
+    }
+    
+    static func mockLocations() throws -> [ApiLocation] {
+        do {
+            let data = try self.loadLocationData()
+            let transformations = try JSONDecoder().decode([ApiLocation].self, from: data)
+            return transformations
+        } catch {
+            throw error
+        }
+    }
 }

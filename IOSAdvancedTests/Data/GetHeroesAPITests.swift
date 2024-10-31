@@ -1,14 +1,8 @@
-//
-//  ApiProviderTests.swift
-//  IOSAdvanced
-//
-//  Created by José Antonio Aravena on 27-10-24.
-//
 
 import XCTest
 @testable import IOSAdvanced
 
-final class ApiProviderTests: XCTestCase {
+final class GetHeroesAPITests: XCTestCase {
     
     var sut: GetHeroesAPIRequest!
     var apisession: APISessionContract!
@@ -16,6 +10,7 @@ final class ApiProviderTests: XCTestCase {
     override func setUpWithError() throws {
         apisession = APISessionMock()
         sut = GetHeroesAPIRequest(name: "")
+        URLProtocolMock.error = nil
         try super.setUpWithError()
     }
 

@@ -31,6 +31,7 @@ final class StoreProviderTests: XCTestCase {
     override func setUpWithError() throws {
         try super.setUpWithError()
         sut = StoreDataProvider(persistency: .inMemory)
+        URLProtocolMock.error = nil
         
     }
 
